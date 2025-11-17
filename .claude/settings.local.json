@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:dribbble.com)",
+      "WebFetch(domain:www.figma.com)",
+      "WebFetch(domain:medium.com)",
+      "WebFetch(domain:www.behance.net)",
+      "WebFetch(domain:confetti.design)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

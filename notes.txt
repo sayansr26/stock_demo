@@ -1,0 +1,3 @@
+1. Add tabs in feeds like inshots
+2. fix the select index and select stock from reference
+3. light mode UI needed ( minor )
