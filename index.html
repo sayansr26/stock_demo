@@ -14,33 +14,37 @@
     />
     <style>
       :root {
-        /* Dark Mode Material Design 3.0 Colors */
-        --primary-color: #bb86fc;
-        --primary-dark-color: #9965f4;
-        --accent-color: #03dac6;
-        --secondary-color: #cf6679;
-        --background-color: #121212;
-        --surface-color: #1e1e1e;
-        --card-background-color: #2c2c2c;
-        --elevated-surface: #383838;
-        --text-primary-color: rgba(255, 255, 255, 0.87);
-        --text-secondary-color: rgba(255, 255, 255, 0.6);
-        --text-disabled-color: rgba(255, 255, 255, 0.38);
-        --divider-color: rgba(255, 255, 255, 0.12);
-        --error-color: #cf6679;
-        --success-color: #4caf50;
-        --warning-color: #ffa726;
+        /* Premium Warm Dark Theme - Luxury Financial App */
+        --primary-color: #B8995A;
+        --primary-dark-color: #9A7A3D;
+        --accent-color: #D4AF78;
+        --secondary-color: #C9B99C;
+        --background-color: #0D0D0D;
+        --surface-color: #1A1A1A;
+        --card-background-color: #C9B99C;
+        --elevated-surface: #D4C4B0;
+        --text-primary-color: rgba(255, 255, 255, 0.95);
+        --text-secondary-color: rgba(255, 255, 255, 0.7);
+        --text-disabled-color: rgba(255, 255, 255, 0.4);
+        --text-dark-primary: rgba(0, 0, 0, 0.87);
+        --text-dark-secondary: rgba(0, 0, 0, 0.6);
+        --divider-color: rgba(184, 153, 90, 0.15);
+        --divider-light: rgba(0, 0, 0, 0.1);
+        --error-color: #E57373;
+        --success-color: #81C784;
+        --warning-color: #FFB74D;
         --font-family: "Roboto", sans-serif;
-        --border-radius: 12px;
-        --elevation-1: 0 2px 4px rgba(0, 0, 0, 0.4);
-        --elevation-2: 0 4px 8px rgba(0, 0, 0, 0.4);
-        --elevation-3: 0 8px 16px rgba(0, 0, 0, 0.4);
+        --border-radius: 16px;
+        --elevation-1: 0 2px 8px rgba(0, 0, 0, 0.3);
+        --elevation-2: 0 4px 12px rgba(0, 0, 0, 0.25);
+        --elevation-3: 0 8px 24px rgba(0, 0, 0, 0.2);
       }
       body {
         font-family: var(--font-family);
-        background-color: #0a0a0a;
+        background: linear-gradient(135deg, #1A1410 0%, #0D0D0D 100%);
         margin: 0;
         padding: 40px;
+        min-height: 100vh;
       }
       h1.main-title {
         text-align: center;
@@ -202,8 +206,9 @@
         height: 100%;
         background: linear-gradient(
           135deg,
-          var(--primary-color) 0%,
-          var(--primary-dark-color) 100%
+          #D4AF78 0%,
+          #B8995A 50%,
+          #9A7A3D 100%
         );
         color: white;
         position: relative;
@@ -231,7 +236,7 @@
         height: 200px;
         background: radial-gradient(
           circle,
-          rgba(3, 218, 198, 0.2) 0%,
+          rgba(184, 153, 90, 0.15) 0%,
           transparent 70%
         );
         border-radius: 50%;
@@ -269,16 +274,9 @@
       .logo {
         font-size: 6em;
         font-weight: 700;
-        background: linear-gradient(
-          135deg,
-          #ffffff 0%,
-          var(--accent-color) 100%
-        );
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        color: #FFFFFF;
         margin-bottom: 16px;
-        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.3);
         letter-spacing: -2px;
       }
       .tagline {
@@ -369,17 +367,22 @@
       .form-group input {
         width: 100%;
         padding: 14px 16px;
-        border: 1px solid var(--divider-color);
+        border: 1px solid rgba(184, 153, 90, 0.2);
         border-radius: var(--border-radius);
         font-size: 1em;
         box-sizing: border-box;
-        background-color: var(--card-background-color);
+        background-color: rgba(26, 26, 26, 0.6);
         color: var(--text-primary-color);
-        transition: border-color 0.2s;
+        transition: all 0.3s ease;
+      }
+      .form-group input::placeholder {
+        color: rgba(255, 255, 255, 0.35);
       }
       .form-group input:focus {
         outline: none;
         border-color: var(--primary-color);
+        background-color: rgba(26, 26, 26, 0.8);
+        box-shadow: 0 0 0 3px rgba(184, 153, 90, 0.1);
       }
       .form-group.password-field input {
         padding-right: 48px;
@@ -400,25 +403,28 @@
         color: var(--text-primary-color);
       }
       .btn {
-        background-color: var(--primary-color);
-        color: white;
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark-color) 100%);
+        color: rgba(0, 0, 0, 0.87);
         padding: 14px;
         width: 100%;
         border: none;
         border-radius: var(--border-radius);
         font-size: 1em;
-        font-weight: 500;
+        font-weight: 600;
         cursor: pointer;
         text-align: center;
         text-decoration: none;
         display: inline-block;
         box-sizing: border-box;
-        box-shadow: var(--elevation-1);
-        transition: background-color 0.2s, box-shadow 0.2s;
+        box-shadow: 0 4px 12px rgba(184, 153, 90, 0.3);
+        transition: all 0.3s ease;
       }
       .btn:hover {
-        background-color: var(--primary-dark-color);
-        box-shadow: var(--elevation-2);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(184, 153, 90, 0.4);
+      }
+      .btn:active {
+        transform: translateY(0);
       }
       .link {
         margin-top: 16px;
@@ -437,21 +443,24 @@
       }
       .social-btn {
         padding: 12px 24px;
-        border: 1px solid var(--divider-color);
+        border: 1px solid rgba(184, 153, 90, 0.2);
         border-radius: var(--border-radius);
         cursor: pointer;
         display: flex;
         align-items: center;
         gap: 8px;
-        background: var(--card-background-color);
+        background: rgba(26, 26, 26, 0.6);
         color: var(--text-primary-color);
         font-weight: 500;
-        transition: background-color 0.2s;
+        transition: all 0.3s ease;
         flex: 1;
         justify-content: center;
       }
       .social-btn:hover {
-        background-color: var(--elevated-surface);
+        background: rgba(26, 26, 26, 0.8);
+        border-color: var(--primary-color);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
       }
 
       /* Feed Screen */
@@ -461,7 +470,8 @@
         background-color: var(--background-color);
       }
       .news-card {
-        background-color: var(--card-background-color);
+        background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
         border-radius: var(--border-radius);
         box-shadow: var(--elevation-2);
         padding: 24px;
@@ -545,18 +555,20 @@
         background: linear-gradient(
           to bottom,
           transparent,
-          var(--card-background-color)
+          rgba(26, 26, 26, 0.8)
         );
       }
       .card-content {
         height: 56%;
         padding: 28px 24px;
-        background-color: var(--card-background-color);
+        background: rgba(26, 26, 26, 0.8);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         overflow-y: auto;
         border-radius: 0 0 16px 16px;
+        border: 1px solid rgba(184, 153, 90, 0.2);
+        border-top: none;
       }
       .card-content h2 {
         font-size: 1.6em;
@@ -664,7 +676,8 @@
         padding: 12px 24px;
         border: 1px solid var(--divider-color);
         color: var(--text-primary-color);
-        background-color: var(--card-background-color);
+        background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
         border-radius: var(--border-radius);
         cursor: pointer;
         display: flex;
@@ -724,16 +737,19 @@
         align-items: center;
         justify-content: space-between;
         padding: 18px;
-        background-color: var(--card-background-color);
+        background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
         border-radius: var(--border-radius);
         margin-bottom: 12px;
         box-shadow: var(--elevation-1);
-        transition: box-shadow 0.2s, transform 0.2s;
+        transition: all 0.3s ease;
         cursor: pointer;
       }
       .list-item:hover,
       .stock-item:hover {
-        box-shadow: var(--elevation-2);
+        background: rgba(26, 26, 26, 0.8);
+        border-color: var(--primary-color);
+        box-shadow: 0 4px 12px rgba(184, 153, 90, 0.2);
         transform: translateY(-2px);
       }
       .list-item-content h3 {
@@ -759,15 +775,19 @@
         align-items: center;
         justify-content: space-between;
         padding: 18px;
-        background-color: var(--card-background-color);
+        background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
         border-radius: var(--border-radius);
         margin-bottom: 12px;
         box-shadow: var(--elevation-1);
-        transition: box-shadow 0.2s;
+        transition: all 0.3s ease;
         cursor: pointer;
       }
       .selection-item:hover {
-        box-shadow: var(--elevation-2);
+        background: rgba(26, 26, 26, 0.8);
+        border-color: var(--primary-color);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(184, 153, 90, 0.2);
       }
       .selection-item label {
         flex-grow: 1;
@@ -794,15 +814,21 @@
       .search-bar-container {
         display: flex;
         align-items: center;
-        background-color: var(--card-background-color);
+        background: rgba(26, 26, 26, 0.6);
         border-radius: var(--border-radius);
         padding: 12px 16px;
         margin: 16px;
         box-shadow: var(--elevation-1);
-        border: 1px solid var(--divider-color);
+        border: 1px solid rgba(184, 153, 90, 0.2);
+        transition: all 0.3s ease;
+      }
+      .search-bar-container:focus-within {
+        background: rgba(26, 26, 26, 0.8);
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(184, 153, 90, 0.1);
       }
       .search-bar-container i {
-        color: var(--text-secondary-color);
+        color: var(--primary-color);
         margin-right: 12px;
       }
       .search-bar-container input {
@@ -814,7 +840,7 @@
         color: var(--text-primary-color);
       }
       .search-bar-container input::placeholder {
-        color: var(--text-secondary-color);
+        color: rgba(255, 255, 255, 0.35);
       }
       .search-close-btn:hover {
         background-color: rgba(255, 255, 255, 0.1);
@@ -879,7 +905,8 @@
         align-items: center;
         margin-bottom: 32px;
         padding: 24px;
-        background-color: var(--card-background-color);
+        background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
         border-radius: var(--border-radius);
         box-shadow: var(--elevation-1);
       }
@@ -889,7 +916,7 @@
         border-radius: 50%;
         margin-bottom: 16px;
         border: 3px solid var(--primary-color);
-        box-shadow: 0 4px 12px rgba(187, 134, 252, 0.3);
+        box-shadow: 0 4px 12px rgba(184, 153, 90, 0.4);
       }
       .profile-header h2 {
         margin: 0 0 6px 0;
@@ -906,7 +933,8 @@
         display: flex;
         align-items: center;
         padding: 18px;
-        background-color: var(--card-background-color);
+        background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
         border-radius: var(--border-radius);
         margin-bottom: 12px;
         text-decoration: none;
@@ -941,7 +969,8 @@
         text-align: center;
         margin-bottom: 32px;
         padding: 24px;
-        background-color: var(--card-background-color);
+        background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
         border-radius: var(--border-radius);
         box-shadow: var(--elevation-1);
       }
@@ -984,7 +1013,8 @@
         justify-content: space-around;
         margin-bottom: 20px;
         border-bottom: 2px solid var(--divider-color);
-        background-color: var(--card-background-color);
+        background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
         border-radius: var(--border-radius) var(--border-radius) 0 0;
         overflow: hidden;
       }
@@ -1062,7 +1092,8 @@
       }
       .webview-url {
         flex: 1;
-        background-color: var(--card-background-color);
+        background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
         padding: 8px 12px;
         border-radius: 20px;
         font-size: 0.85em;
@@ -1764,7 +1795,8 @@
                   <!-- NIFTY 50 -->
                   <div
                     style="
-                      background-color: var(--card-background-color);
+                      background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                       border-radius: var(--border-radius);
                       padding: 16px;
                       box-shadow: var(--elevation-1);
@@ -1868,7 +1900,8 @@
                   <!-- SENSEX -->
                   <div
                     style="
-                      background-color: var(--card-background-color);
+                      background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                       border-radius: var(--border-radius);
                       padding: 16px;
                       box-shadow: var(--elevation-1);
@@ -1969,7 +2002,8 @@
                   <!-- NASDAQ -->
                   <div
                     style="
-                      background-color: var(--card-background-color);
+                      background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                       border-radius: var(--border-radius);
                       padding: 16px;
                       box-shadow: var(--elevation-1);
@@ -2068,7 +2102,8 @@
                   <!-- DOW JONES -->
                   <div
                     style="
-                      background-color: var(--card-background-color);
+                      background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                       border-radius: var(--border-radius);
                       padding: 16px;
                       box-shadow: var(--elevation-1);
@@ -2167,7 +2202,8 @@
                   <!-- S&P 500 -->
                   <div
                     style="
-                      background-color: var(--card-background-color);
+                      background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                       border-radius: var(--border-radius);
                       padding: 16px;
                       box-shadow: var(--elevation-1);
@@ -2405,7 +2441,8 @@
                   <!-- RELIANCE -->
                   <div
                     style="
-                      background-color: var(--card-background-color);
+                      background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                       border-radius: var(--border-radius);
                       padding: 16px;
                       box-shadow: var(--elevation-1);
@@ -2506,7 +2543,8 @@
                   <!-- TCS -->
                   <div
                     style="
-                      background-color: var(--card-background-color);
+                      background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                       border-radius: var(--border-radius);
                       padding: 16px;
                       box-shadow: var(--elevation-1);
@@ -2607,7 +2645,8 @@
                   <!-- HDFCBANK -->
                   <div
                     style="
-                      background-color: var(--card-background-color);
+                      background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                       border-radius: var(--border-radius);
                       padding: 16px;
                       box-shadow: var(--elevation-1);
@@ -2806,7 +2845,8 @@
                   <!-- RELIANCE -->
                   <div
                     style="
-                      background-color: var(--card-background-color);
+                      background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                       border-radius: var(--border-radius);
                       padding: 16px;
                       box-shadow: var(--elevation-1);
@@ -2905,7 +2945,8 @@
                   <!-- RELINFRA -->
                   <div
                     style="
-                      background-color: var(--card-background-color);
+                      background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                       border-radius: var(--border-radius);
                       padding: 16px;
                       box-shadow: var(--elevation-1);
@@ -3001,7 +3042,8 @@
                   <!-- RELPOW -->
                   <div
                     style="
-                      background-color: var(--card-background-color);
+                      background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                       border-radius: var(--border-radius);
                       padding: 16px;
                       box-shadow: var(--elevation-1);
@@ -3100,7 +3142,8 @@
                   <!-- RELCAPITAL -->
                   <div
                     style="
-                      background-color: var(--card-background-color);
+                      background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                       border-radius: var(--border-radius);
                       padding: 16px;
                       box-shadow: var(--elevation-1);
@@ -3584,7 +3627,8 @@
 
                     <div
                       style="
-                        background-color: var(--card-background-color);
+                        background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                         padding: 16px;
                         border-radius: 12px;
                         border-left: 3px solid var(--primary-color);
@@ -3634,7 +3678,8 @@
                       <span
                         style="
                           padding: 6px 14px;
-                          background-color: var(--card-background-color);
+                          background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                           color: var(--text-secondary-color);
                           border-radius: 16px;
                           font-size: 0.8em;
@@ -3645,7 +3690,8 @@
                       <span
                         style="
                           padding: 6px 14px;
-                          background-color: var(--card-background-color);
+                          background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                           color: var(--text-secondary-color);
                           border-radius: 16px;
                           font-size: 0.8em;
@@ -3656,7 +3702,8 @@
                       <span
                         style="
                           padding: 6px 14px;
-                          background-color: var(--card-background-color);
+                          background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                           color: var(--text-secondary-color);
                           border-radius: 16px;
                           font-size: 0.8em;
@@ -3667,7 +3714,8 @@
                       <span
                         style="
                           padding: 6px 14px;
-                          background-color: var(--card-background-color);
+                          background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                           color: var(--text-secondary-color);
                           border-radius: 16px;
                           font-size: 0.8em;
@@ -3768,7 +3816,8 @@
                   style="
                     margin-top: 32px;
                     padding: 16px;
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     border-radius: var(--border-radius);
                     border-left: 4px solid var(--primary-color);
                   "
@@ -4378,7 +4427,8 @@
 
                     <div
                       style="
-                        background-color: var(--card-background-color);
+                        background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                         padding: 16px;
                         border-radius: 12px;
                         border-left: 3px solid var(--success-color);
@@ -4435,7 +4485,8 @@
                       <span
                         style="
                           padding: 6px 14px;
-                          background-color: var(--card-background-color);
+                          background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                           color: var(--text-secondary-color);
                           border-radius: 16px;
                           font-size: 0.8em;
@@ -4446,7 +4497,8 @@
                       <span
                         style="
                           padding: 6px 14px;
-                          background-color: var(--card-background-color);
+                          background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                           color: var(--text-secondary-color);
                           border-radius: 16px;
                           font-size: 0.8em;
@@ -4457,7 +4509,8 @@
                       <span
                         style="
                           padding: 6px 14px;
-                          background-color: var(--card-background-color);
+                          background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                           color: var(--text-secondary-color);
                           border-radius: 16px;
                           font-size: 0.8em;
@@ -4468,7 +4521,8 @@
                       <span
                         style="
                           padding: 6px 14px;
-                          background-color: var(--card-background-color);
+                          background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                           color: var(--text-secondary-color);
                           border-radius: 16px;
                           font-size: 0.8em;
@@ -4599,7 +4653,8 @@
               <div style="display: flex; flex-direction: column; gap: 12px">
                 <div
                   style="
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     border-radius: var(--border-radius);
                     padding: 16px;
                     box-shadow: var(--elevation-1);
@@ -4734,7 +4789,8 @@
 
                 <div
                   style="
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     border-radius: var(--border-radius);
                     padding: 16px;
                     box-shadow: var(--elevation-1);
@@ -4869,7 +4925,8 @@
 
                 <div
                   style="
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     border-radius: var(--border-radius);
                     padding: 16px;
                     box-shadow: var(--elevation-1);
@@ -5085,7 +5142,8 @@
                 <!-- Info Card -->
                 <div
                   style="
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     border-radius: var(--border-radius);
                     padding: 16px;
                     margin-bottom: 20px;
@@ -5162,7 +5220,8 @@
                   <!-- NIFTY 50 -->
                   <div
                     style="
-                      background-color: var(--card-background-color);
+                      background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                       border-radius: var(--border-radius);
                       padding: 16px;
                       box-shadow: var(--elevation-1);
@@ -5265,7 +5324,8 @@
                   <!-- SENSEX -->
                   <div
                     style="
-                      background-color: var(--card-background-color);
+                      background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                       border-radius: var(--border-radius);
                       padding: 16px;
                       box-shadow: var(--elevation-1);
@@ -5365,7 +5425,8 @@
                   <!-- NASDAQ -->
                   <div
                     style="
-                      background-color: var(--card-background-color);
+                      background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                       border-radius: var(--border-radius);
                       padding: 16px;
                       box-shadow: var(--elevation-1);
@@ -5468,7 +5529,8 @@
                   <!-- DOW JONES -->
                   <div
                     style="
-                      background-color: var(--card-background-color);
+                      background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                       border-radius: var(--border-radius);
                       padding: 16px;
                       box-shadow: var(--elevation-1);
@@ -5566,7 +5628,8 @@
                   <!-- S&P 500 -->
                   <div
                     style="
-                      background-color: var(--card-background-color);
+                      background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                       border-radius: var(--border-radius);
                       padding: 16px;
                       box-shadow: var(--elevation-1);
@@ -5664,7 +5727,8 @@
                   <!-- FTSE 100 -->
                   <div
                     style="
-                      background-color: var(--card-background-color);
+                      background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                       border-radius: var(--border-radius);
                       padding: 16px;
                       box-shadow: var(--elevation-1);
@@ -5759,7 +5823,8 @@
                   <!-- DAX -->
                   <div
                     style="
-                      background-color: var(--card-background-color);
+                      background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                       border-radius: var(--border-radius);
                       padding: 16px;
                       box-shadow: var(--elevation-1);
@@ -5857,7 +5922,8 @@
                   <!-- NIKKEI 225 -->
                   <div
                     style="
-                      background-color: var(--card-background-color);
+                      background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                       border-radius: var(--border-radius);
                       padding: 16px;
                       box-shadow: var(--elevation-1);
@@ -6065,7 +6131,8 @@
               <div style="display: flex; flex-direction: column; gap: 12px">
                 <div
                   style="
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     border-radius: var(--border-radius);
                     padding: 16px;
                     box-shadow: var(--elevation-1);
@@ -6154,7 +6221,8 @@
 
                 <div
                   style="
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     border-radius: var(--border-radius);
                     padding: 16px;
                     box-shadow: var(--elevation-1);
@@ -6243,7 +6311,8 @@
 
                 <div
                   style="
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     border-radius: var(--border-radius);
                     padding: 16px;
                     box-shadow: var(--elevation-1);
@@ -6332,7 +6401,8 @@
 
                 <div
                   style="
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     border-radius: var(--border-radius);
                     padding: 16px;
                     box-shadow: var(--elevation-1);
@@ -6502,7 +6572,8 @@
                 <!-- Info Card -->
                 <div
                   style="
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     border-radius: var(--border-radius);
                     padding: 16px;
                     margin-bottom: 20px;
@@ -6585,7 +6656,8 @@
                 <div style="display: flex; flex-direction: column; gap: 12px">
                   <div
                     style="
-                      background-color: var(--card-background-color);
+                      background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                       border-radius: var(--border-radius);
                       padding: 16px;
                       box-shadow: var(--elevation-1);
@@ -6678,7 +6750,8 @@
 
                   <div
                     style="
-                      background-color: var(--card-background-color);
+                      background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                       border-radius: var(--border-radius);
                       padding: 16px;
                       box-shadow: var(--elevation-1);
@@ -6771,7 +6844,8 @@
 
                   <div
                     style="
-                      background-color: var(--card-background-color);
+                      background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                       border-radius: var(--border-radius);
                       padding: 16px;
                       box-shadow: var(--elevation-1);
@@ -6873,7 +6947,8 @@
 
                   <div
                     style="
-                      background-color: var(--card-background-color);
+                      background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                       border-radius: var(--border-radius);
                       padding: 16px;
                       box-shadow: var(--elevation-1);
@@ -6966,7 +7041,8 @@
 
                   <div
                     style="
-                      background-color: var(--card-background-color);
+                      background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                       border-radius: var(--border-radius);
                       padding: 16px;
                       box-shadow: var(--elevation-1);
@@ -7059,7 +7135,8 @@
 
                   <div
                     style="
-                      background-color: var(--card-background-color);
+                      background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                       border-radius: var(--border-radius);
                       padding: 16px;
                       box-shadow: var(--elevation-1);
@@ -7312,7 +7389,8 @@
               >
                 <button
                   style="
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     color: var(--text-secondary-color);
                     border: none;
                     padding: 8px 16px;
@@ -7347,7 +7425,8 @@
                 </button>
                 <button
                   style="
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     color: var(--text-secondary-color);
                     border: none;
                     padding: 8px 16px;
@@ -7362,7 +7441,8 @@
                 </button>
                 <button
                   style="
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     color: var(--text-secondary-color);
                     border: none;
                     padding: 8px 16px;
@@ -7377,7 +7457,8 @@
                 </button>
                 <button
                   style="
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     color: var(--text-secondary-color);
                     border: none;
                     padding: 8px 16px;
@@ -7392,7 +7473,8 @@
                 </button>
                 <button
                   style="
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     color: var(--text-secondary-color);
                     border: none;
                     padding: 8px 16px;
@@ -7410,7 +7492,8 @@
               <!-- Chart Placeholder -->
               <div
                 style="
-                  background-color: var(--card-background-color);
+                  background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                   border-radius: var(--border-radius);
                   padding: 20px;
                   margin-bottom: 24px;
@@ -7477,7 +7560,8 @@
               <!-- Key Stats -->
               <div
                 style="
-                  background-color: var(--card-background-color);
+                  background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                   border-radius: var(--border-radius);
                   padding: 16px;
                   margin-bottom: 24px;
@@ -7630,7 +7714,8 @@
                   display: flex;
                   gap: 0;
                   margin-bottom: 20px;
-                  background-color: var(--card-background-color);
+                  background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                   border-radius: var(--border-radius);
                   padding: 4px;
                   box-shadow: var(--elevation-1);
@@ -7676,7 +7761,8 @@
               <!-- About Section -->
               <div
                 style="
-                  background-color: var(--card-background-color);
+                  background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                   border-radius: var(--border-radius);
                   padding: 16px;
                   margin-bottom: 16px;
@@ -7766,7 +7852,8 @@
               >
                 <div
                   style="
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     border-radius: var(--border-radius);
                     overflow: hidden;
                     box-shadow: var(--elevation-1);
@@ -7860,7 +7947,8 @@
               >
                 <div
                   style="
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     border-radius: var(--border-radius);
                     overflow: hidden;
                     box-shadow: var(--elevation-1);
@@ -8050,7 +8138,8 @@
               >
                 <div
                   style="
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     border-radius: var(--border-radius);
                     padding: 16px;
                     text-align: center;
@@ -8078,7 +8167,8 @@
                 </div>
                 <div
                   style="
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     border-radius: var(--border-radius);
                     padding: 16px;
                     text-align: center;
@@ -8123,7 +8213,8 @@
                 </h3>
                 <div
                   style="
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     border-radius: var(--border-radius);
                     overflow: hidden;
                     box-shadow: var(--elevation-1);
@@ -8274,7 +8365,8 @@
                 </h3>
                 <div
                   style="
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     border-radius: var(--border-radius);
                     overflow: hidden;
                     box-shadow: var(--elevation-1);
@@ -8488,7 +8580,8 @@
                 </h3>
                 <div
                   style="
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     border-radius: var(--border-radius);
                     overflow: hidden;
                     box-shadow: var(--elevation-1);
@@ -8639,7 +8732,8 @@
                 </h3>
                 <div
                   style="
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     border-radius: var(--border-radius);
                     overflow: hidden;
                     box-shadow: var(--elevation-1);
@@ -8889,7 +8983,8 @@
 
                 <div
                   style="
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     border-radius: var(--border-radius);
                     padding: 20px;
                     box-shadow: var(--elevation-1);
@@ -9056,7 +9151,8 @@
 
                 <div
                   style="
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     border-radius: var(--border-radius);
                     padding: 20px;
                     box-shadow: var(--elevation-1);
@@ -9237,7 +9333,8 @@
                     align-items: center;
                     justify-content: center;
                     padding: 14px;
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     color: var(--text-primary-color);
                     border-radius: var(--border-radius);
                     text-decoration: none;
@@ -9339,7 +9436,8 @@
                 </h3>
                 <div
                   style="
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     border-radius: var(--border-radius);
                     overflow: hidden;
                     box-shadow: var(--elevation-1);
@@ -9527,7 +9625,8 @@
                 </h3>
                 <div
                   style="
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     border-radius: var(--border-radius);
                     overflow: hidden;
                     box-shadow: var(--elevation-1);
@@ -9809,7 +9908,8 @@
                 </h3>
                 <div
                   style="
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     border-radius: var(--border-radius);
                     overflow: hidden;
                     box-shadow: var(--elevation-1);
@@ -9960,7 +10060,8 @@
                 </h3>
                 <div
                   style="
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     border-radius: var(--border-radius);
                     overflow: hidden;
                     box-shadow: var(--elevation-1);
@@ -10240,7 +10341,8 @@
                 </h3>
                 <div
                   style="
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     border-radius: var(--border-radius);
                     overflow: hidden;
                     box-shadow: var(--elevation-1);
@@ -10563,7 +10665,8 @@
                 </h3>
                 <div
                   style="
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     border-radius: var(--border-radius);
                     overflow: hidden;
                     box-shadow: var(--elevation-1);
@@ -10886,7 +10989,8 @@
                 </h3>
                 <div
                   style="
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     border-radius: var(--border-radius);
                     overflow: hidden;
                     box-shadow: var(--elevation-1);
@@ -11180,7 +11284,8 @@
                     style="
                       width: 100%;
                       padding: 14px 14px 14px 44px;
-                      background-color: var(--card-background-color);
+                      background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                       border: 1px solid var(--divider-color);
                       border-radius: var(--border-radius);
                       color: var(--text-primary-color);
@@ -11218,7 +11323,8 @@
                     href="#contact"
                     style="
                       text-decoration: none;
-                      background-color: var(--card-background-color);
+                      background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                       border-radius: var(--border-radius);
                       padding: 20px;
                       text-align: center;
@@ -11262,7 +11368,8 @@
                     href="#chat"
                     style="
                       text-decoration: none;
-                      background-color: var(--card-background-color);
+                      background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                       border-radius: var(--border-radius);
                       padding: 20px;
                       text-align: center;
@@ -11322,7 +11429,8 @@
                 </h3>
                 <div
                   style="
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     border-radius: var(--border-radius);
                     overflow: hidden;
                     box-shadow: var(--elevation-1);
@@ -11599,7 +11707,8 @@
                 </h3>
                 <div
                   style="
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     border-radius: var(--border-radius);
                     overflow: hidden;
                     box-shadow: var(--elevation-1);
@@ -12023,7 +12132,8 @@
                 <span
                   style="
                     padding: 6px 12px;
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     color: var(--text-secondary-color);
                     border-radius: 16px;
                     font-size: 0.75em;
@@ -12059,7 +12169,8 @@
                 <div style="max-width: 75%">
                   <div
                     style="
-                      background-color: var(--card-background-color);
+                      background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                       border-radius: 16px;
                       border-top-left-radius: 4px;
                       padding: 12px 16px;
@@ -12165,7 +12276,8 @@
                 <div style="max-width: 75%">
                   <div
                     style="
-                      background-color: var(--card-background-color);
+                      background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                       border-radius: 16px;
                       border-top-left-radius: 4px;
                       padding: 12px 16px;
@@ -12223,7 +12335,8 @@
                 <div style="max-width: 75%">
                   <div
                     style="
-                      background-color: var(--card-background-color);
+                      background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                       border-radius: 16px;
                       border-top-left-radius: 4px;
                       padding: 12px 16px;
@@ -12249,7 +12362,8 @@
                       href="#reply1"
                       style="
                         padding: 8px 14px;
-                        background-color: var(--card-background-color);
+                        background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                         color: var(--primary-color);
                         border: 1px solid var(--primary-color);
                         border-radius: 20px;
@@ -12266,7 +12380,8 @@
                       href="#reply2"
                       style="
                         padding: 8px 14px;
-                        background-color: var(--card-background-color);
+                        background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                         color: var(--primary-color);
                         border: 1px solid var(--primary-color);
                         border-radius: 20px;
@@ -12283,7 +12398,8 @@
                       href="#reply3"
                       style="
                         padding: 8px 14px;
-                        background-color: var(--card-background-color);
+                        background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                         color: var(--primary-color);
                         border: 1px solid var(--primary-color);
                         border-radius: 20px;
@@ -12334,7 +12450,8 @@
                 </div>
                 <div
                   style="
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     border-radius: 16px;
                     border-top-left-radius: 4px;
                     padding: 12px 16px;
@@ -12394,7 +12511,8 @@
                   style="
                     width: 40px;
                     height: 40px;
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     border: none;
                     border-radius: 50%;
                     display: flex;
@@ -12419,7 +12537,8 @@
                     style="
                       width: 100%;
                       padding: 10px 16px;
-                      background-color: var(--card-background-color);
+                      background: rgba(26, 26, 26, 0.6);
+                      border: 1px solid rgba(184, 153, 90, 0.2);
                       border: 1px solid var(--divider-color);
                       border-radius: 20px;
                       color: var(--text-primary-color);
@@ -12567,7 +12686,8 @@
                 <!-- Push Notification - Success -->
                 <div
                   style="
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     border-radius: var(--border-radius);
                     padding: 16px;
                     margin-bottom: 12px;
@@ -12655,7 +12775,8 @@
                 <!-- Push Notification - News -->
                 <div
                   style="
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     border-radius: var(--border-radius);
                     padding: 16px;
                     margin-bottom: 12px;
@@ -13387,7 +13508,8 @@
                 <!-- Circular Progress -->
                 <div
                   style="
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     border-radius: var(--border-radius);
                     padding: 24px;
                     margin-bottom: 12px;
@@ -13419,7 +13541,8 @@
                 <!-- Linear Progress -->
                 <div
                   style="
-                    background-color: var(--card-background-color);
+                    background: rgba(26, 26, 26, 0.6);
+        border: 1px solid rgba(184, 153, 90, 0.2);
                     border-radius: var(--border-radius);
                     padding: 20px;
                     margin-bottom: 12px;
