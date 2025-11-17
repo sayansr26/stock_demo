@@ -6,7 +6,9 @@
       "WebFetch(domain:www.figma.com)",
       "WebFetch(domain:medium.com)",
       "WebFetch(domain:www.behance.net)",
-      "WebFetch(domain:confetti.design)"
+      "WebFetch(domain:confetti.design)",
+      "Bash(cp:*)",
+      "WebFetch(domain:www.halo-lab.com)"
     ],
     "deny": [],
     "ask": []
