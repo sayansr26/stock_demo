@@ -1,0 +1,361 @@
+{
+  "designSystem": {
+    "meta": {
+      "name": "StockBrief Design System",
+      "version": "1.0.0",
+      "description": "Premium Warm Dark Theme - Luxury Financial App UI Design System",
+      "lastUpdated": "2025-11-19",
+      "totalScreens": 27,
+      "totalNotificationComponents": 8,
+      "primaryFont": "Roboto",
+      "iconFamily": "Material Icons",
+      "note": "Notification components separated into dedicated component library"
+    },
+    "colorPalette": {
+      "primary": {
+        "main": "#B8995A",
+        "dark": "#9A7A3D",
+        "light": "#D4AF78",
+        "description": "Luxury gold tone for primary actions and highlights"
+      },
+      "secondary": {
+        "main": "#C9B99C",
+        "description": "Warm neutral tone for secondary elements"
+      },
+      "accent": {
+        "main": "#D4AF78",
+        "description": "Light gold accent for highlights and decorative elements"
+      },
+      "background": {
+        "primary": "#0D0D0D",
+        "surface": "#1A1A1A",
+        "card": "#C9B99C",
+        "elevated": "#D4C4B0",
+        "gradient": "linear-gradient(135deg, #1A1410 0%, #0D0D0D 100%)",
+        "description": "Dark background system with elevated surfaces"
+      },
+      "text": {
+        "primary": "rgba(255, 255, 255, 0.95)",
+        "secondary": "rgba(255, 255, 255, 0.7)",
+        "disabled": "rgba(255, 255, 255, 0.4)",
+        "darkPrimary": "rgba(0, 0, 0, 0.87)",
+        "darkSecondary": "rgba(0, 0, 0, 0.6)",
+        "description": "Text colors for light and dark contexts"
+      },
+      "status": {
+        "success": "#81C784",
+        "warning": "#FFB74D",
+        "error": "#E57373",
+        "positive": "#81C784",
+        "negative": "#E57373",
+        "neutral": "rgba(255, 255, 255, 0.7)",
+        "description": "Status and sentiment indication colors"
+      },
+      "dividers": {
+        "primary": "rgba(184, 153, 90, 0.15)",
+        "light": "rgba(0, 0, 0, 0.1)",
+        "description": "Divider and border colors"
+      }
+    },
+    "typography": {
+      "fontFamily": {
+        "primary": "Roboto, sans-serif",
+        "fallback": "system-ui, -apple-system, sans-serif"
+      },
+      "fontWeights": {
+        "light": 300,
+        "regular": 400,
+        "medium": 500,
+        "semibold": 600,
+        "bold": 700
+      },
+      "fontSizes": {
+        "xs": "0.75em",
+        "sm": "0.85em",
+        "base": "1em",
+        "lg": "1.1em",
+        "xl": "1.2em",
+        "2xl": "1.4em",
+        "3xl": "1.6em",
+        "4xl": "1.8em",
+        "5xl": "2.5em",
+        "6xl": "3em",
+        "7xl": "6em"
+      },
+      "lineHeights": {
+        "tight": 1.2,
+        "base": 1.5,
+        "relaxed": 1.6,
+        "loose": 1.7,
+        "extraLoose": 1.8
+      },
+      "letterSpacing": {
+        "tighter": "-2px",
+        "tight": "-1px",
+        "normal": "0px",
+        "wide": "0.2px",
+        "wider": "0.3px",
+        "widest": "1px",
+        "ultra": "4px"
+      }
+    },
+    "spacing": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "12px",
+      "base": "16px",
+      "lg": "20px",
+      "xl": "24px",
+      "2xl": "28px",
+      "3xl": "32px",
+      "4xl": "40px",
+      "5xl": "48px",
+      "6xl": "60px",
+      "7xl": "80px",
+      "8xl": "100px",
+      "9xl": "120px"
+    },
+    "borderRadius": {
+      "none": "0px",
+      "sm": "2px",
+      "base": "16px",
+      "lg": "20px",
+      "xl": "54px",
+      "full": "50%"
+    },
+    "elevation": {
+      "level1": "0 2px 8px rgba(0, 0, 0, 0.3)",
+      "level2": "0 4px 12px rgba(0, 0, 0, 0.25)",
+      "level3": "0 8px 24px rgba(0, 0, 0, 0.2)",
+      "level4": "0 20px 60px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.1)",
+      "primary": "0 6px 20px rgba(184, 153, 90, 0.4)"
+    },
+    "components": {
+      "appHeader": {
+        "height": "64px",
+        "backgroundColor": "var(--surface-color)",
+        "padding": "12px 16px",
+        "paddingTop": "48px",
+        "boxShadow": "var(--elevation-1)",
+        "borderBottom": "1px solid var(--divider-color)",
+        "typography": {
+          "fontSize": "1.1em",
+          "fontWeight": 500,
+          "letterSpacing": "0.2px"
+        }
+      },
+      "bottomNavigation": {
+        "height": "80px",
+        "backgroundColor": "var(--surface-color)",
+        "boxShadow": "0 -2px 16px rgba(0, 0, 0, 0.5)",
+        "borderTop": "1px solid rgba(255, 255, 255, 0.08)",
+        "backdropFilter": "blur(10px)",
+        "padding": "8px 0 28px 0"
+      },
+      "navigationItem": {
+        "padding": "8px 20px",
+        "borderRadius": "16px",
+        "typography": {
+          "fontSize": "0.7em",
+          "fontWeight": 600,
+          "letterSpacing": "0.3px"
+        },
+        "icon": {
+          "fontSize": "1.5em",
+          "marginBottom": "4px"
+        },
+        "activeIndicator": {
+          "width": "32px",
+          "height": "3px",
+          "background": "linear-gradient(90deg, var(--primary-color), var(--accent-color))",
+          "borderRadius": "2px",
+          "boxShadow": "0 2px 8px rgba(187, 134, 252, 0.4)"
+        }
+      },
+      "button": {
+        "primary": {
+          "background": "linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark-color) 100%)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "14px 32px",
+          "borderRadius": "var(--border-radius)",
+          "fontWeight": 600,
+          "fontSize": "1em",
+          "letterSpacing": "0.5px",
+          "boxShadow": "var(--elevation-2)",
+          "hoverTransform": "translateY(-2px)",
+          "hoverBoxShadow": "var(--elevation-primary)"
+        },
+        "outline": {
+          "padding": "12px 24px",
+          "border": "1px solid var(--divider-color)",
+          "backgroundColor": "transparent",
+          "color": "var(--text-primary-color)",
+          "borderRadius": "var(--border-radius)",
+          "fontWeight": 500,
+          "hoverBackgroundColor": "var(--elevated-surface)",
+          "hoverBorderColor": "var(--primary-color)"
+        },
+        "social": {
+          "padding": "12px 24px",
+          "border": "1px solid rgba(184, 153, 90, 0.2)",
+          "backgroundColor": "rgba(26, 26, 26, 0.4)",
+          "color": "var(--text-primary-color)",
+          "borderRadius": "var(--border-radius)",
+          "hoverBackground": "rgba(26, 26, 26, 0.8)",
+          "hoverBorderColor": "var(--primary-color)"
+        }
+      },
+      "card": {
+        "news": {
+          "background": "rgba(26, 26, 26, 0.6)",
+          "border": "1px solid rgba(184, 153, 90, 0.2)",
+          "borderRadius": "var(--border-radius)",
+          "padding": "20px",
+          "marginBottom": "16px",
+          "boxShadow": "var(--elevation-1)"
+        },
+        "inshorts": {
+          "width": "100%",
+          "height": "100%",
+          "borderRadius": "var(--border-radius)",
+          "overflow": "hidden",
+          "boxShadow": "var(--elevation-2)",
+          "imageHeight": "30%",
+          "contentHeight": "56%",
+          "footerHeight": "14%"
+        },
+        "stock": {
+          "background": "rgba(26, 26, 26, 0.6)",
+          "border": "1px solid rgba(184, 153, 90, 0.2)",
+          "borderRadius": "var(--border-radius)",
+          "padding": "16px",
+          "marginBottom": "12px",
+          "hoverBackground": "rgba(26, 26, 26, 0.8)",
+          "hoverBorderColor": "var(--primary-color)"
+        }
+      },
+      "form": {
+        "group": {
+          "marginBottom": "20px"
+        },
+        "label": {
+          "fontSize": "0.9em",
+          "fontWeight": 500,
+          "color": "var(--text-secondary-color)",
+          "marginBottom": "8px",
+          "letterSpacing": "0.3px"
+        },
+        "input": {
+          "width": "100%",
+          "padding": "14px 16px",
+          "backgroundColor": "rgba(26, 26, 26, 0.6)",
+          "border": "1px solid rgba(184, 153, 90, 0.2)",
+          "borderRadius": "var(--border-radius)",
+          "color": "var(--text-primary-color)",
+          "fontSize": "1em",
+          "focusBorderColor": "var(--primary-color)",
+          "placeholder": {
+            "color": "rgba(255, 255, 255, 0.35)"
+          }
+        }
+      },
+      "searchBar": {
+        "background": "rgba(26, 26, 26, 0.6)",
+        "border": "1px solid rgba(184, 153, 90, 0.2)",
+        "borderRadius": "var(--border-radius)",
+        "padding": "12px 16px",
+        "margin": "0 16px 16px 16px",
+        "focusBackground": "rgba(26, 26, 26, 0.8)",
+        "focusBorderColor": "var(--primary-color)",
+        "icon": {
+          "color": "var(--primary-color)",
+          "marginRight": "12px"
+        }
+      },
+      "sentiment": {
+        "positive": {
+          "color": "var(--success-color)",
+          "backgroundColor": "rgba(76, 175, 80, 0.15)"
+        },
+        "negative": {
+          "color": "var(--error-color)",
+          "backgroundColor": "rgba(207, 102, 121, 0.15)"
+        },
+        "neutral": {
+          "color": "var(--text-secondary-color)",
+          "backgroundColor": "rgba(255, 255, 255, 0.05)"
+        },
+        "padding": "4px 12px",
+        "borderRadius": "4px",
+        "fontWeight": 600,
+        "fontSize": "0.85em"
+      },
+      "avatar": {
+        "size": "100px",
+        "borderRadius": "var(--border-radius)",
+        "backgroundColor": "var(--primary-color)",
+        "marginBottom": "16px"
+      },
+      "loader": {
+        "dots": {
+          "width": "8px",
+          "height": "8px",
+          "backgroundColor": "rgba(255, 255, 255, 0.6)",
+          "borderRadius": "var(--full)",
+          "gap": "8px"
+        }
+      }
+    },
+    "animations": {
+      "transitions": {
+        "default": "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+        "transform": "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+        "fast": "all 0.15s ease"
+      },
+      "keyframes": {
+        "float": {
+          "0%, 100%": "translateY(0px)",
+          "50%": "translateY(-20px)"
+        },
+        "fadeInScale": {
+          "0%": {
+            "opacity": 0,
+            "transform": "scale(0.8)"
+          },
+          "100%": {
+            "opacity": 1,
+            "transform": "scale(1)"
+          }
+        },
+        "bounce": {
+          "0%, 20%, 50%, 80%, 100%": "translateY(0)",
+          "40%": "translateY(-10px)",
+          "60%": "translateY(-5px)"
+        },
+        "pulse": {
+          "0%": "opacity: 1",
+          "50%": "opacity: 0.5",
+          "100%": "opacity: 1"
+        }
+      }
+    },
+    "screens": {
+      "dimensions": {
+        "width": "390px",
+        "height": "844px",
+        "description": "iPhone 14 Pro dimensions"
+      },
+      "mockup": {
+        "border": "12px solid #1a1a1a",
+        "borderRadius": "54px",
+        "boxShadow": "var(--elevation-4)"
+      },
+      "notch": {
+        "width": "160px",
+        "height": "30px",
+        "backgroundColor": "#000000",
+        "borderRadius": "0 0 20px 20px"
+      }
+    }
+  }
+}

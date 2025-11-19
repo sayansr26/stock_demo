@@ -1,0 +1,622 @@
+{
+  "notificationComponents": {
+    "meta": {
+      "name": "StockBrief Notification Components",
+      "version": "1.0.0",
+      "description": "Comprehensive notification and alert component library",
+      "lastUpdated": "2025-11-19",
+      "totalComponents": 8
+    },
+    "componentCategories": [
+      "Push Notifications",
+      "In-App Alerts",
+      "Snackbars",
+      "Toast Messages",
+      "Status Indicators",
+      "Badges",
+      "Modal Alerts",
+      "System Notifications"
+    ],
+    "components": {
+      "pushNotifications": {
+        "description": "System-level push notifications displayed in notification center",
+        "variants": [
+          {
+            "name": "Breaking News",
+            "type": "breaking",
+            "priority": "high",
+            "style": {
+              "backgroundColor": "rgba(229, 115, 115, 0.1)",
+              "borderLeft": "4px solid var(--error-color)",
+              "icon": "notification_important",
+              "iconColor": "var(--error-color)"
+            },
+            "structure": {
+              "title": "Market Alert",
+              "message": "S&P 500 drops 2.5% following Fed announcement",
+              "timestamp": "10 minutes ago",
+              "actions": ["View", "Dismiss"],
+              "persistent": true
+            },
+            "example": {
+              "title": "🚨 Breaking: Market Alert",
+              "body": "S&P 500 drops 2.5% following Fed announcement",
+              "data": {
+                "type": "market_alert",
+                "severity": "high",
+                "symbol": "SPX",
+                "change": "-2.5%"
+              }
+            }
+          },
+          {
+            "name": "Stock Price Alert",
+            "type": "stock_alert",
+            "priority": "medium",
+            "style": {
+              "backgroundColor": "rgba(129, 199, 132, 0.1)",
+              "borderLeft": "4px solid var(--success-color)",
+              "icon": "trending_up",
+              "iconColor": "var(--success-color)"
+            },
+            "structure": {
+              "title": "AAPL Price Alert",
+              "message": "Apple stock is up 3.2% today ($175.43)",
+              "timestamp": "1 hour ago",
+              "actions": ["View Stock", "Dismiss"],
+              "persistent": false
+            },
+            "example": {
+              "title": "📈 AAPL +3.2%",
+              "body": "Apple stock reached your target price of $175",
+              "data": {
+                "type": "price_alert",
+                "symbol": "AAPL",
+                "price": "175.43",
+                "change": "+3.2%",
+                "target": "175.00"
+              }
+            }
+          },
+          {
+            "name": "News Article",
+            "type": "news",
+            "priority": "medium",
+            "style": {
+              "backgroundColor": "rgba(184, 153, 90, 0.1)",
+              "borderLeft": "4px solid var(--primary-color)",
+              "icon": "article",
+              "iconColor": "var(--primary-color)"
+            },
+            "structure": {
+              "title": "New Article",
+              "message": "Tesla reports record quarterly deliveries",
+              "timestamp": "2 hours ago",
+              "actions": ["Read", "Save", "Dismiss"],
+              "persistent": false
+            },
+            "example": {
+              "title": "📰 New Article for TSLA",
+              "body": "Tesla reports record quarterly deliveries - Read 50-word summary",
+              "data": {
+                "type": "news_article",
+                "articleId": "12345",
+                "symbol": "TSLA",
+                "sentiment": "positive"
+              }
+            }
+          },
+          {
+            "name": "Feature Announcement",
+            "type": "feature",
+            "priority": "low",
+            "style": {
+              "backgroundColor": "rgba(255, 183, 77, 0.1)",
+              "borderLeft": "4px solid var(--warning-color)",
+              "icon": "new_releases",
+              "iconColor": "var(--warning-color)"
+            },
+            "structure": {
+              "title": "New Feature",
+              "message": "Introducing real-time portfolio tracking",
+              "timestamp": "1 day ago",
+              "actions": ["Learn More", "Dismiss"],
+              "persistent": false
+            },
+            "example": {
+              "title": "🚀 New Feature Available",
+              "body": "Try our new real-time portfolio tracking feature",
+              "data": {
+                "type": "feature_announcement",
+                "featureId": "portfolio_tracking",
+                "version": "1.2.0"
+              }
+            }
+          }
+        ]
+      },
+      "inAppAlerts": {
+        "description": "Modal alerts displayed within the app",
+        "variants": [
+          {
+            "name": "Confirmation Dialog",
+            "type": "confirmation",
+            "style": {
+              "backgroundColor": "var(--surface-color)",
+              "borderRadius": "var(--border-radius)",
+              "padding": "24px",
+              "boxShadow": "var(--elevation-3)",
+              "backdropColor": "rgba(0, 0, 0, 0.6)"
+            },
+            "structure": {
+              "icon": "warning",
+              "title": "Remove Stock",
+              "message": "Are you sure you want to remove AAPL from your portfolio?",
+              "buttons": [
+                {
+                  "text": "Cancel",
+                  "style": "outline",
+                  "action": "dismiss"
+                },
+                {
+                  "text": "Remove",
+                  "style": "primary",
+                  "color": "var(--error-color)",
+                  "action": "confirm"
+                }
+              ]
+            }
+          },
+          {
+            "name": "Success Alert",
+            "type": "success",
+            "style": {
+              "backgroundColor": "var(--surface-color)",
+              "border": "1px solid var(--success-color)",
+              "borderRadius": "var(--border-radius)",
+              "padding": "24px"
+            },
+            "structure": {
+              "icon": "check_circle",
+              "iconColor": "var(--success-color)",
+              "title": "Stock Added",
+              "message": "AAPL has been added to your portfolio",
+              "buttons": [
+                {
+                  "text": "View Portfolio",
+                  "style": "primary",
+                  "action": "navigate"
+                },
+                {
+                  "text": "OK",
+                  "style": "outline",
+                  "action": "dismiss"
+                }
+              ]
+            }
+          },
+          {
+            "name": "Error Alert",
+            "type": "error",
+            "style": {
+              "backgroundColor": "var(--surface-color)",
+              "border": "1px solid var(--error-color)",
+              "borderRadius": "var(--border-radius)",
+              "padding": "24px"
+            },
+            "structure": {
+              "icon": "error",
+              "iconColor": "var(--error-color)",
+              "title": "Connection Failed",
+              "message": "Unable to fetch latest stock prices. Please check your internet connection.",
+              "buttons": [
+                {
+                  "text": "Retry",
+                  "style": "primary",
+                  "action": "retry"
+                },
+                {
+                  "text": "Cancel",
+                  "style": "outline",
+                  "action": "dismiss"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "snackbars": {
+        "description": "Bottom-anchored temporary messages",
+        "variants": [
+          {
+            "name": "Action Snackbar",
+            "type": "action",
+            "style": {
+              "backgroundColor": "var(--surface-color)",
+              "color": "var(--text-primary-color)",
+              "borderRadius": "8px",
+              "margin": "16px",
+              "padding": "16px 24px",
+              "boxShadow": "var(--elevation-2)",
+              "position": "fixed",
+              "bottom": "100px",
+              "left": "0",
+              "right": "0",
+              "zIndex": 1000
+            },
+            "structure": {
+              "message": "Stock removed from portfolio",
+              "action": {
+                "text": "UNDO",
+                "style": "text-button",
+                "color": "var(--primary-color)"
+              },
+              "duration": 4000,
+              "dismissible": true
+            }
+          },
+          {
+            "name": "Success Snackbar",
+            "type": "success",
+            "style": {
+              "backgroundColor": "var(--success-color)",
+              "color": "white",
+              "borderRadius": "8px",
+              "margin": "16px",
+              "padding": "16px 24px"
+            },
+            "structure": {
+              "icon": "check",
+              "message": "Article saved successfully",
+              "duration": 3000,
+              "dismissible": true
+            }
+          },
+          {
+            "name": "Error Snackbar",
+            "type": "error",
+            "style": {
+              "backgroundColor": "var(--error-color)",
+              "color": "white",
+              "borderRadius": "8px",
+              "margin": "16px",
+              "padding": "16px 24px"
+            },
+            "structure": {
+              "icon": "error",
+              "message": "Failed to load news feed",
+              "action": {
+                "text": "RETRY",
+                "style": "text-button",
+                "color": "white"
+              },
+              "duration": 5000,
+              "dismissible": true
+            }
+          }
+        ]
+      },
+      "toastMessages": {
+        "description": "Lightweight temporary messages",
+        "variants": [
+          {
+            "name": "Simple Toast",
+            "type": "simple",
+            "style": {
+              "backgroundColor": "rgba(26, 26, 26, 0.9)",
+              "color": "var(--text-primary-color)",
+              "borderRadius": "24px",
+              "padding": "12px 20px",
+              "fontSize": "0.9em",
+              "position": "fixed",
+              "top": "120px",
+              "left": "50%",
+              "transform": "translateX(-50%)",
+              "zIndex": 1000,
+              "backdropFilter": "blur(10px)"
+            },
+            "structure": {
+              "message": "Refreshing feed...",
+              "duration": 2000,
+              "animation": "fadeInOut"
+            }
+          },
+          {
+            "name": "Icon Toast",
+            "type": "icon",
+            "style": {
+              "backgroundColor": "rgba(26, 26, 26, 0.9)",
+              "color": "var(--text-primary-color)",
+              "borderRadius": "24px",
+              "padding": "12px 20px",
+              "fontSize": "0.9em",
+              "display": "flex",
+              "alignItems": "center",
+              "gap": "8px"
+            },
+            "structure": {
+              "icon": "sync",
+              "message": "Syncing portfolio...",
+              "duration": 2000
+            }
+          }
+        ]
+      },
+      "statusIndicators": {
+        "description": "Visual status indicators for various states",
+        "variants": [
+          {
+            "name": "Connection Status",
+            "type": "connection",
+            "style": {
+              "display": "flex",
+              "alignItems": "center",
+              "gap": "8px",
+              "padding": "4px 12px",
+              "borderRadius": "12px",
+              "fontSize": "0.8em"
+            },
+            "states": {
+              "online": {
+                "backgroundColor": "rgba(129, 199, 132, 0.15)",
+                "color": "var(--success-color)",
+                "icon": "circle",
+                "text": "● Online"
+              },
+              "offline": {
+                "backgroundColor": "rgba(229, 115, 115, 0.15)",
+                "color": "var(--error-color)",
+                "icon": "circle",
+                "text": "● Offline"
+              },
+              "connecting": {
+                "backgroundColor": "rgba(255, 183, 77, 0.15)",
+                "color": "var(--warning-color)",
+                "icon": "circle",
+                "text": "● Connecting..."
+              }
+            }
+          },
+          {
+            "name": "Market Status",
+            "type": "market",
+            "style": {
+              "padding": "4px 8px",
+              "borderRadius": "8px",
+              "fontSize": "0.75em",
+              "fontWeight": 600
+            },
+            "states": {
+              "open": {
+                "backgroundColor": "rgba(129, 199, 132, 0.15)",
+                "color": "var(--success-color)",
+                "text": "MARKET OPEN"
+              },
+              "closed": {
+                "backgroundColor": "rgba(255, 255, 255, 0.05)",
+                "color": "var(--text-secondary-color)",
+                "text": "MARKET CLOSED"
+              },
+              "premarket": {
+                "backgroundColor": "rgba(255, 183, 77, 0.15)",
+                "color": "var(--warning-color)",
+                "text": "PRE-MARKET"
+              }
+            }
+          }
+        ]
+      },
+      "badges": {
+        "description": "Small notification indicators",
+        "variants": [
+          {
+            "name": "Notification Badge",
+            "type": "notification",
+            "style": {
+              "backgroundColor": "var(--error-color)",
+              "color": "white",
+              "borderRadius": "50%",
+              "width": "20px",
+              "height": "20px",
+              "fontSize": "0.7em",
+              "fontWeight": 600,
+              "display": "flex",
+              "alignItems": "center",
+              "justifyContent": "center",
+              "position": "absolute",
+              "top": "-8px",
+              "right": "-8px"
+            },
+            "structure": {
+              "count": "3",
+              "maxDisplay": 99,
+              "overflowText": "99+"
+            }
+          },
+          {
+            "name": "Status Badge",
+            "type": "status",
+            "style": {
+              "padding": "2px 8px",
+              "borderRadius": "12px",
+              "fontSize": "0.7em",
+              "fontWeight": 600,
+              "textTransform": "uppercase"
+            },
+            "states": {
+              "new": {
+                "backgroundColor": "var(--primary-color)",
+                "color": "white",
+                "text": "NEW"
+              },
+              "updated": {
+                "backgroundColor": "var(--warning-color)",
+                "color": "white",
+                "text": "UPDATED"
+              },
+              "unread": {
+                "backgroundColor": "var(--error-color)",
+                "color": "white",
+                "text": "●"
+              }
+            }
+          }
+        ]
+      },
+      "modalAlerts": {
+        "description": "Full-screen overlay alerts",
+        "variants": [
+          {
+            "name": "System Alert",
+            "type": "system",
+            "style": {
+              "position": "fixed",
+              "top": 0,
+              "left": 0,
+              "right": 0,
+              "bottom": 0,
+              "backgroundColor": "rgba(0, 0, 0, 0.8)",
+              "display": "flex",
+              "alignItems": "center",
+              "justifyContent": "center",
+              "zIndex": 2000
+            },
+            "content": {
+              "style": {
+                "backgroundColor": "var(--surface-color)",
+                "borderRadius": "var(--border-radius)",
+                "padding": "32px",
+                "margin": "20px",
+                "maxWidth": "320px",
+                "textAlign": "center"
+              },
+              "structure": {
+                "icon": "system_update",
+                "iconSize": "4em",
+                "iconColor": "var(--primary-color)",
+                "title": "Update Required",
+                "message": "A new version of StockBrief is available with important improvements.",
+                "buttons": [
+                  {
+                    "text": "Update Now",
+                    "style": "primary",
+                    "action": "update"
+                  },
+                  {
+                    "text": "Later",
+                    "style": "text-button",
+                    "action": "dismiss"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "systemNotifications": {
+        "description": "System-level notifications and permissions",
+        "variants": [
+          {
+            "name": "Permission Request",
+            "type": "permission",
+            "style": {
+              "backgroundColor": "var(--surface-color)",
+              "border": "1px solid var(--divider-color)",
+              "borderRadius": "var(--border-radius)",
+              "padding": "20px",
+              "margin": "16px"
+            },
+            "structure": {
+              "icon": "notifications",
+              "title": "Enable Notifications",
+              "message": "Get alerts about your stocks and breaking market news.",
+              "buttons": [
+                {
+                  "text": "Enable",
+                  "style": "primary",
+                  "action": "grant"
+                },
+                {
+                  "text": "Not Now",
+                  "style": "outline",
+                  "action": "deny"
+                }
+              ]
+            }
+          },
+          {
+            "name": "Location Permission",
+            "type": "location",
+            "structure": {
+              "icon": "location_on",
+              "title": "Location Access",
+              "message": "Allow StockBrief to access your location for local market hours.",
+              "buttons": [
+                {
+                  "text": "Allow",
+                  "style": "primary"
+                },
+                {
+                  "text": "Don't Allow",
+                  "style": "outline"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "animations": {
+      "fadeInOut": {
+        "keyframes": {
+          "0%": {"opacity": 0, "transform": "scale(0.8)"},
+          "100%": {"opacity": 1, "transform": "scale(1)"}
+        },
+        "duration": "300ms",
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      "slideUp": {
+        "keyframes": {
+          "0%": {"transform": "translateY(100%)"},
+          "100%": {"transform": "translateY(0)"}
+        },
+        "duration": "250ms",
+        "easing": "ease-out"
+      },
+      "bounce": {
+        "keyframes": {
+          "0%, 20%, 50%, 80%, 100%": {"transform": "translateY(0)"},
+          "40%": {"transform": "translateY(-10px)"},
+          "60%": {"transform": "translateY(-5px)"}
+        },
+        "duration": "600ms",
+        "easing": "ease-in-out"
+      }
+    },
+    "implementation": {
+      "flutter": {
+        "packages": [
+          "flutter_local_notifications",
+          "firebase_messaging",
+          "overlay_support",
+          "another_flushbar"
+        ],
+        "examples": {
+          "snackbar": "ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Stock added')))",
+          "dialog": "showDialog(context: context, builder: (context) => AlertDialog(...))",
+          "toast": "showOverlayNotification((context) => ToastWidget(...))"
+        }
+      },
+      "permissions": {
+        "android": [
+          "android.permission.RECEIVE_BOOT_COMPLETED",
+          "android.permission.VIBRATE",
+          "android.permission.WAKE_LOCK"
+        ],
+        "ios": [
+          "UserNotifications.framework"
+        ]
+      }
+    }
+  }
+}

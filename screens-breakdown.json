@@ -1,0 +1,2056 @@
+{
+  "screensBreakdown": {
+    "meta": {
+      "totalScreens": 27,
+      "categories": ["Authentication", "Onboarding", "Feed", "Stock Management", "Profile", "Utility"],
+      "designSystemVersion": "1.0.0",
+      "note": "Screen 28 'Notifications & Alerts' has been moved to notification-components.json as it showcases components rather than a screen"
+    },
+    "screens": [
+      {
+        "id": 1,
+        "name": "Splash Screen",
+        "category": "Authentication",
+        "description": "App launch screen with branding",
+        "elements": {
+          "container": {
+            "style": "splash-container",
+            "background": "linear-gradient(135deg, #D4AF78 0%, #B8995A 50%, #9A7A3D 100%)",
+            "display": "flex",
+            "flexDirection": "column",
+            "justifyContent": "center",
+            "alignItems": "center"
+          },
+          "logoWrapper": {
+            "style": "logo-wrapper",
+            "zIndex": 2,
+            "animation": "fadeInScale 1s ease-out"
+          },
+          "logo": {
+            "text": "SB",
+            "fontSize": "6em",
+            "fontWeight": 700,
+            "color": "#FFFFFF",
+            "textShadow": "0 4px 20px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.3)",
+            "letterSpacing": "-2px"
+          },
+          "tagline": {
+            "text": "STOCKBRIEF",
+            "fontSize": "1.4em",
+            "fontWeight": 400,
+            "letterSpacing": "4px",
+            "textTransform": "uppercase",
+            "color": "rgba(255, 255, 255, 0.95)"
+          },
+          "subtitle": {
+            "text": "AI-Powered Stock News in 50 Words",
+            "fontSize": "0.95em",
+            "fontWeight": 300,
+            "letterSpacing": "1px",
+            "color": "rgba(255, 255, 255, 0.7)"
+          },
+          "loader": {
+            "style": "splash-loader",
+            "position": "absolute",
+            "bottom": "80px",
+            "dots": [
+              {"animationDelay": "0s"},
+              {"animationDelay": "0.2s"},
+              {"animationDelay": "0.4s"}
+            ]
+          },
+          "version": {
+            "text": "v1.0.0",
+            "fontSize": "0.75em",
+            "color": "rgba(255, 255, 255, 0.5)",
+            "position": "absolute",
+            "bottom": "40px"
+          },
+          "decorativeElements": {
+            "float1": {
+              "width": "300px",
+              "height": "300px",
+              "background": "radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%)",
+              "borderRadius": "50%",
+              "position": "absolute",
+              "top": "-100px",
+              "right": "-100px",
+              "animation": "float 6s ease-in-out infinite"
+            },
+            "float2": {
+              "width": "200px",
+              "height": "200px",
+              "background": "radial-gradient(circle, rgba(184, 153, 90, 0.15) 0%, transparent 70%)",
+              "borderRadius": "50%",
+              "position": "absolute",
+              "bottom": "-50px",
+              "left": "-50px",
+              "animation": "float 8s ease-in-out infinite reverse"
+            }
+          }
+        }
+      },
+      {
+        "id": 2,
+        "name": "Login Screen",
+        "category": "Authentication",
+        "description": "User login with email and password",
+        "elements": {
+          "header": {
+            "style": "app-header",
+            "title": "Welcome Back"
+          },
+          "container": {
+            "style": "auth-container",
+            "padding": "40px 32px"
+          },
+          "form": {
+            "emailGroup": {
+              "label": {
+                "text": "Email Address",
+                "style": "form-group label"
+              },
+              "input": {
+                "type": "email",
+                "placeholder": "Enter your email",
+                "style": "form-group input"
+              }
+            },
+            "passwordGroup": {
+              "label": {
+                "text": "Password",
+                "style": "form-group label"
+              },
+              "input": {
+                "type": "password",
+                "placeholder": "Enter your password",
+                "style": "form-group input password-field"
+              },
+              "toggleButton": {
+                "style": "password-toggle",
+                "icon": "visibility",
+                "position": "absolute",
+                "right": "12px"
+              }
+            },
+            "submitButton": {
+              "text": "Sign In",
+              "style": "btn",
+              "type": "primary"
+            }
+          },
+          "forgotPasswordLink": {
+            "text": "Forgot your password?",
+            "style": "link",
+            "color": "var(--primary-color)"
+          },
+          "socialLogin": {
+            "style": "social-login",
+            "googleButton": {
+              "text": "Continue with Google",
+              "style": "social-btn",
+              "icon": "Google"
+            },
+            "facebookButton": {
+              "text": "Continue with Facebook",
+              "style": "social-btn",
+              "icon": "Facebook"
+            }
+          },
+          "signupLink": {
+            "text": "Don't have an account? Sign Up",
+            "style": "link",
+            "alignment": "center"
+          }
+        }
+      },
+      {
+        "id": 3,
+        "name": "Forgot Password",
+        "category": "Authentication",
+        "description": "Password recovery screen",
+        "elements": {
+          "header": {
+            "style": "app-header",
+            "title": "Forgot Password",
+            "backButton": {
+              "icon": "arrow_back",
+              "style": "material-icons"
+            }
+          },
+          "container": {
+            "style": "auth-container",
+            "padding": "40px 32px"
+          },
+          "description": {
+            "text": "Enter your email address to receive a password reset link.",
+            "color": "var(--text-secondary-color)",
+            "marginBottom": "32px",
+            "textAlign": "center"
+          },
+          "form": {
+            "emailGroup": {
+              "label": {
+                "text": "Email Address",
+                "style": "form-group label"
+              },
+              "input": {
+                "type": "email",
+                "placeholder": "Enter your email",
+                "style": "form-group input"
+              }
+            },
+            "submitButton": {
+              "text": "Send Reset Link",
+              "style": "btn",
+              "type": "primary"
+            }
+          },
+          "backToLogin": {
+            "text": "Back to Sign In",
+            "style": "link",
+            "alignment": "center"
+          }
+        }
+      },
+      {
+        "id": 4,
+        "name": "Register Screen",
+        "category": "Authentication",
+        "description": "User registration with personal details",
+        "elements": {
+          "header": {
+            "style": "app-header",
+            "title": "Create Account",
+            "backButton": {
+              "icon": "arrow_back",
+              "style": "material-icons"
+            }
+          },
+          "container": {
+            "style": "auth-container",
+            "padding": "40px 32px"
+          },
+          "form": {
+            "firstNameGroup": {
+              "label": {
+                "text": "First Name",
+                "style": "form-group label"
+              },
+              "input": {
+                "type": "text",
+                "placeholder": "Enter your first name",
+                "style": "form-group input"
+              }
+            },
+            "lastNameGroup": {
+              "label": {
+                "text": "Last Name",
+                "style": "form-group label"
+              },
+              "input": {
+                "type": "text",
+                "placeholder": "Enter your last name",
+                "style": "form-group input"
+              }
+            },
+            "emailGroup": {
+              "label": {
+                "text": "Email Address",
+                "style": "form-group label"
+              },
+              "input": {
+                "type": "email",
+                "placeholder": "Enter your email",
+                "style": "form-group input"
+              }
+            },
+            "phoneGroup": {
+              "label": {
+                "text": "Phone Number",
+                "style": "form-group label"
+              },
+              "input": {
+                "type": "tel",
+                "placeholder": "+1 (555) 000-0000",
+                "style": "form-group input"
+              }
+            },
+            "passwordGroup": {
+              "label": {
+                "text": "Password",
+                "style": "form-group label"
+              },
+              "input": {
+                "type": "password",
+                "placeholder": "Create a strong password",
+                "style": "form-group input password-field"
+              },
+              "toggleButton": {
+                "style": "password-toggle",
+                "icon": "visibility",
+                "position": "absolute",
+                "right": "12px"
+              }
+            },
+            "confirmPasswordGroup": {
+              "label": {
+                "text": "Confirm Password",
+                "style": "form-group label"
+              },
+              "input": {
+                "type": "password",
+                "placeholder": "Confirm your password",
+                "style": "form-group input password-field"
+              }
+            },
+            "submitButton": {
+              "text": "Create Account",
+              "style": "btn",
+              "type": "primary"
+            }
+          },
+          "terms": {
+            "text": "By creating an account, you agree to our Terms of Service and Privacy Policy.",
+            "fontSize": "0.8em",
+            "color": "var(--text-secondary-color)",
+            "textAlign": "center",
+            "marginTop": "16px"
+          },
+          "loginLink": {
+            "text": "Already have an account? Sign In",
+            "style": "link",
+            "alignment": "center"
+          }
+        }
+      },
+      {
+        "id": 5,
+        "name": "Walkthrough Tips",
+        "category": "Onboarding",
+        "description": "App introduction and tips",
+        "elements": {
+          "container": {
+            "style": "walkthrough-container",
+            "height": "100%"
+          },
+          "content": {
+            "style": "walkthrough-content",
+            "display": "flex",
+            "flexDirection": "column",
+            "justifyContent": "center",
+            "alignItems": "center",
+            "padding": "40px"
+          },
+          "image": {
+            "style": "walkthrough-image",
+            "width": "200px",
+            "height": "200px",
+            "background": "linear-gradient(135deg, var(--primary-color), var(--accent-color))",
+            "borderRadius": "50%",
+            "icon": {
+              "name": "trending_up",
+              "fontSize": "6em",
+              "color": "white"
+            }
+          },
+          "title": {
+            "text": "Smart News Feed",
+            "fontSize": "1.8em",
+            "color": "var(--text-primary-color)",
+            "fontWeight": 600,
+            "marginTop": "32px"
+          },
+          "description": {
+            "text": "Get AI-powered 50-word summaries of the latest stock market news, tailored to your portfolio.",
+            "color": "var(--text-secondary-color)",
+            "lineHeight": 1.7,
+            "textAlign": "center",
+            "marginTop": "16px"
+          },
+          "indicators": {
+            "style": "walkthrough-indicators",
+            "display": "flex",
+            "gap": "8px",
+            "marginTop": "40px",
+            "dots": [
+              {"active": true},
+              {"active": false},
+              {"active": false}
+            ]
+          }
+        }
+      },
+      {
+        "id": 6,
+        "name": "Market Index Selection",
+        "category": "Onboarding",
+        "description": "Choose market indices to follow",
+        "elements": {
+          "header": {
+            "style": "app-header",
+            "title": "Select Market Indices",
+            "description": "Choose the market indices you want to follow"
+          },
+          "searchBar": {
+            "style": "search-bar-container",
+            "icon": "search",
+            "placeholder": "Search indices...",
+            "margin": "0 16px 16px 16px"
+          },
+          "container": {
+            "style": "list-container",
+            "padding": "16px",
+            "paddingBottom": "100px"
+          },
+          "indexList": [
+            {
+              "style": "selection-item",
+              "checkbox": true,
+              "title": "S&P 500 (SPX)",
+              "subtitle": "Large Cap US Stocks • 500 companies",
+              "checked": true
+            },
+            {
+              "style": "selection-item",
+              "checkbox": true,
+              "title": "NASDAQ Composite (IXIC)",
+              "subtitle": "Technology Heavy Index • 3000+ companies",
+              "checked": false
+            },
+            {
+              "style": "selection-item",
+              "checkbox": true,
+              "title": "Dow Jones (DJI)",
+              "subtitle": "Blue Chip Stocks • 30 companies",
+              "checked": true
+            },
+            {
+              "style": "selection-item",
+              "checkbox": true,
+              "title": "Nifty 50 (NSEI)",
+              "subtitle": "Top 50 Indian Stocks • NSE",
+              "checked": false
+            },
+            {
+              "style": "selection-item",
+              "checkbox": true,
+              "title": "Sensex (BSESN)",
+              "subtitle": "Top 30 Indian Stocks • BSE",
+              "checked": false
+            },
+            {
+              "style": "selection-item",
+              "checkbox": true,
+              "title": "FTSE 100 (UKX)",
+              "subtitle": "Top 100 UK Stocks • LSE",
+              "checked": false
+            },
+            {
+              "style": "selection-item",
+              "checkbox": true,
+              "title": "DAX (DAX)",
+              "subtitle": "Top 30 German Stocks • Xetra",
+              "checked": false
+            },
+            {
+              "style": "selection-item",
+              "checkbox": true,
+              "title": "Nikkei 225 (N225)",
+              "subtitle": "Top 225 Japanese Stocks • TSE",
+              "checked": false
+            }
+          ],
+          "continueButton": {
+            "text": "Continue",
+            "style": "btn",
+            "type": "primary",
+            "position": "fixed",
+            "bottom": "100px",
+            "left": "16px",
+            "right": "16px"
+          }
+        }
+      },
+      {
+        "id": 7,
+        "name": "Stock Selection",
+        "category": "Onboarding",
+        "description": "Choose individual stocks to follow",
+        "elements": {
+          "header": {
+            "style": "app-header",
+            "title": "Select Your Stocks",
+            "description": "Choose stocks you want to track"
+          },
+          "searchBar": {
+            "style": "search-bar-container",
+            "icon": "search",
+            "placeholder": "Search stocks...",
+            "margin": "0 16px 16px 16px"
+          },
+          "container": {
+            "style": "list-container",
+            "padding": "16px",
+            "paddingBottom": "100px"
+          },
+          "stockList": [
+            {
+              "style": "selection-item",
+              "checkbox": true,
+              "title": "Apple Inc. (AAPL)",
+              "subtitle": "Technology • $2.8T Market Cap",
+              "price": "$175.43",
+              "change": "+2.34%",
+              "changeColor": "positive",
+              "checked": true
+            },
+            {
+              "style": "selection-item",
+              "checkbox": true,
+              "title": "Microsoft Corp. (MSFT)",
+              "subtitle": "Technology • $2.4T Market Cap",
+              "price": "$334.89",
+              "change": "+1.23%",
+              "changeColor": "positive",
+              "checked": true
+            },
+            {
+              "style": "selection-item",
+              "checkbox": true,
+              "title": "Tesla Inc. (TSLA)",
+              "subtitle": "Automotive • $800B Market Cap",
+              "price": "$248.42",
+              "change": "-3.45%",
+              "changeColor": "negative",
+              "checked": false
+            },
+            {
+              "style": "selection-item",
+              "checkbox": true,
+              "title": "Amazon.com Inc. (AMZN)",
+              "subtitle": "E-commerce • $1.2T Market Cap",
+              "price": "$127.74",
+              "change": "+0.89%",
+              "changeColor": "positive",
+              "checked": false
+            },
+            {
+              "style": "selection-item",
+              "checkbox": true,
+              "title": "Alphabet Inc. (GOOGL)",
+              "subtitle": "Technology • $1.1T Market Cap",
+              "price": "$138.21",
+              "change": "+1.67%",
+              "changeColor": "positive",
+              "checked": false
+            }
+          ],
+          "continueButton": {
+            "text": "Start Reading",
+            "style": "btn",
+            "type": "primary",
+            "position": "fixed",
+            "bottom": "100px",
+            "left": "16px",
+            "right": "16px"
+          }
+        }
+      },
+      {
+        "id": 8,
+        "name": "Stock Search",
+        "category": "Stock Management",
+        "description": "Search for stocks to add",
+        "elements": {
+          "header": {
+            "style": "app-header",
+            "title": "Add Stocks",
+            "backButton": {
+              "icon": "arrow_back",
+              "style": "material-icons"
+            }
+          },
+          "searchBar": {
+            "style": "search-bar-container",
+            "icon": "search",
+            "placeholder": "Search stocks, ETFs, indices...",
+            "margin": "0 16px 16px 16px",
+            "active": true
+          },
+          "container": {
+            "style": "list-container",
+            "padding": "16px",
+            "paddingBottom": "100px"
+          },
+          "searchResults": [
+            {
+              "style": "stock-item",
+              "title": "Apple Inc.",
+              "symbol": "AAPL",
+              "subtitle": "Technology • NASDAQ",
+              "price": "$175.43",
+              "change": "+2.34%",
+              "changeColor": "positive",
+              "addButton": {
+                "style": "btn-add",
+                "icon": "add",
+                "state": "inactive"
+              }
+            },
+            {
+              "style": "stock-item",
+              "title": "Microsoft Corporation",
+              "symbol": "MSFT",
+              "subtitle": "Technology • NASDAQ",
+              "price": "$334.89",
+              "change": "+1.23%",
+              "changeColor": "positive",
+              "addButton": {
+                "style": "btn-add",
+                "icon": "check",
+                "state": "active"
+              }
+            },
+            {
+              "style": "stock-item",
+              "title": "Advanced Micro Devices",
+              "symbol": "AMD",
+              "subtitle": "Technology • NASDAQ",
+              "price": "$107.32",
+              "change": "-1.45%",
+              "changeColor": "negative",
+              "addButton": {
+                "style": "btn-add",
+                "icon": "add",
+                "state": "inactive"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": 9,
+        "name": "Feed Screen (Inshorts Style)",
+        "category": "Feed",
+        "description": "Swipeable news cards with summaries",
+        "elements": {
+          "header": {
+            "style": "app-header",
+            "title": "StockBrief"
+          },
+          "container": {
+            "style": "feed-container",
+            "height": "100%",
+            "overflow": "hidden"
+          },
+          "feedContent": {
+            "style": "inshorts-feed",
+            "height": "calc(100% - 80px - 64px)"
+          },
+          "newsCard": {
+            "style": "inshorts-card",
+            "position": "absolute",
+            "imageSection": {
+              "style": "card-image",
+              "height": "30%",
+              "backgroundImage": "url('https://example.com/stock-chart.jpg')",
+              "backgroundSize": "cover",
+              "backgroundPosition": "center"
+            },
+            "contentSection": {
+              "style": "card-content",
+              "height": "56%",
+              "padding": "28px 24px",
+              "title": {
+                "text": "Apple's Q4 Earnings Beat Expectations",
+                "fontSize": "1.6em",
+                "fontWeight": 600,
+                "margin": "0 0 16px 0",
+                "color": "var(--text-primary-color)"
+              },
+              "summary": {
+                "text": "Apple reported quarterly revenue of $89.5 billion, exceeding analyst expectations of $89.3 billion. iPhone sales drove growth with 15% year-over-year increase. Services revenue hit record $22.3 billion. Strong performance in China market despite economic headwinds. Stock up 3.2% in after-hours trading.",
+                "fontSize": "1.05em",
+                "lineHeight": 1.7,
+                "color": "var(--text-secondary-color)"
+              }
+            },
+            "footerSection": {
+              "style": "card-footer-inshorts",
+              "padding": "20px",
+              "backgroundColor": "var(--surface-color)",
+              "sentiment": {
+                "style": "sentiment positive",
+                "text": "BULLISH"
+              },
+              "source": {
+                "text": "Reuters • 2 hours ago",
+                "fontSize": "0.75em",
+                "color": "var(--text-secondary-color)"
+              },
+              "readMore": {
+                "text": "Read Full Article →",
+                "fontSize": "0.95em",
+                "color": "var(--primary-color)"
+              }
+            }
+          },
+          "swipeIndicator": {
+            "style": "swipe-indicator",
+            "position": "absolute",
+            "bottom": "140px",
+            "left": "50%",
+            "transform": "translateX(-50%)",
+            "leftIcon": {
+              "icon": "keyboard_arrow_left",
+              "fontSize": "1.5em",
+              "animation": "bounce 2s infinite"
+            },
+            "rightIcon": {
+              "icon": "keyboard_arrow_right",
+              "fontSize": "1.5em",
+              "animation": "bounce 2s infinite"
+            }
+          },
+          "bottomNavigation": {
+            "style": "bottom-nav",
+            "items": [
+              {"icon": "home", "text": "Feed", "active": true},
+              {"icon": "bookmark", "text": "Saved", "active": false},
+              {"icon": "trending_up", "text": "Indices", "active": false},
+              {"icon": "person", "text": "Profile", "active": false}
+            ]
+          }
+        }
+      },
+      {
+        "id": 10,
+        "name": "Article Detail Screen",
+        "category": "Feed",
+        "description": "Detailed view of a news article",
+        "elements": {
+          "header": {
+            "style": "app-header",
+            "title": "Article",
+            "backButton": {
+              "icon": "arrow_back",
+              "style": "material-icons"
+            },
+            "shareButton": {
+              "icon": "share",
+              "style": "action-icon"
+            }
+          },
+          "container": {
+            "style": "article-container",
+            "padding": "24px",
+            "paddingBottom": "120px"
+          },
+          "articleHeader": {
+            "title": {
+              "text": "Apple's Q4 Earnings Beat Expectations with Strong iPhone Sales",
+              "fontSize": "1.8em",
+              "margin": "0 0 12px 0",
+              "fontWeight": 600,
+              "lineHeight": 1.4,
+              "color": "var(--text-primary-color)"
+            },
+            "meta": {
+              "style": "article-meta",
+              "display": "flex",
+              "justifyContent": "space-between",
+              "alignItems": "center",
+              "marginBottom": "24px",
+              "source": {
+                "text": "Reuters",
+                "color": "var(--text-secondary-color)",
+                "fontSize": "0.9em"
+              },
+              "time": {
+                "text": "2 hours ago",
+                "color": "var(--text-secondary-color)",
+                "fontSize": "0.9em"
+              },
+              "sentiment": {
+                "style": "sentiment positive",
+                "text": "BULLISH"
+              }
+            }
+          },
+          "articleContent": {
+            "summary": {
+              "text": "Apple reported quarterly revenue of $89.5 billion, exceeding analyst expectations of $89.3 billion. iPhone sales drove growth with 15% year-over-year increase. Services revenue hit record $22.3 billion. Strong performance in China market despite economic headwinds. Stock up 3.2% in after-hours trading.",
+              "fontSize": "1.05em",
+              "lineHeight": 1.8,
+              "color": "var(--text-primary-color)",
+              "marginBottom": "24px"
+            },
+            "fullText": {
+              "text": "Apple Inc. exceeded Wall Street expectations in its fourth-quarter earnings report, demonstrating resilience in challenging global economic conditions...",
+              "fontSize": "1em",
+              "lineHeight": 1.7,
+              "color": "var(--text-secondary-color)"
+            }
+          },
+          "actions": {
+            "style": "actions",
+            "marginTop": "32px",
+            "saveButton": {
+              "text": "Save Article",
+              "style": "btn-outline",
+              "icon": "bookmark_border"
+            },
+            "readMoreButton": {
+              "text": "Read Original",
+              "style": "btn",
+              "type": "primary"
+            }
+          }
+        }
+      },
+      {
+        "id": 11,
+        "name": "WebView - Article Source",
+        "category": "Feed",
+        "description": "In-app browser for original articles",
+        "elements": {
+          "container": {
+            "style": "webview-container",
+            "height": "100%",
+            "display": "flex",
+            "flexDirection": "column"
+          },
+          "webviewHeader": {
+            "style": "webview-header",
+            "backgroundColor": "var(--surface-color)",
+            "padding": "12px 16px",
+            "display": "flex",
+            "alignItems": "center",
+            "gap": "12px",
+            "backButton": {
+              "icon": "arrow_back",
+              "style": "material-icons"
+            },
+            "urlBar": {
+              "style": "webview-url",
+              "flex": 1,
+              "background": "rgba(26, 26, 26, 0.6)",
+              "border": "1px solid rgba(184, 153, 90, 0.2)",
+              "borderRadius": "8px",
+              "padding": "6px 12px",
+              "fontSize": "0.8em",
+              "text": "reuters.com/business/tech/apple-earnings"
+            },
+            "menuButton": {
+              "icon": "more_vert",
+              "style": "material-icons"
+            }
+          },
+          "webviewContent": {
+            "style": "webview-content",
+            "flex": 1,
+            "padding": "24px",
+            "backgroundColor": "white",
+            "color": "black",
+            "placeholder": {
+              "text": "Article content would load here from the original source",
+              "textAlign": "center",
+              "color": "var(--text-secondary-color)"
+            }
+          }
+        }
+      },
+      {
+        "id": 12,
+        "name": "Saved Articles",
+        "category": "Feed",
+        "description": "User's bookmarked articles",
+        "elements": {
+          "header": {
+            "style": "app-header",
+            "title": "Saved Articles"
+          },
+          "container": {
+            "style": "list-container",
+            "padding": "16px",
+            "paddingBottom": "100px"
+          },
+          "savedArticlesList": [
+            {
+              "style": "news-card",
+              "title": {
+                "text": "Apple's Q4 Earnings Beat Expectations",
+                "fontSize": "1.4em",
+                "fontWeight": 600,
+                "marginTop": 0,
+                "color": "var(--text-primary-color)"
+              },
+              "summary": {
+                "text": "Apple reported quarterly revenue of $89.5 billion, exceeding analyst expectations...",
+                "fontSize": "1em",
+                "lineHeight": 1.6,
+                "color": "var(--text-secondary-color)"
+              },
+              "footer": {
+                "style": "card-footer",
+                "sentiment": {
+                  "style": "sentiment positive",
+                  "text": "BULLISH"
+                },
+                "source": {
+                  "text": "Reuters • 2 hours ago",
+                  "style": "source"
+                }
+              }
+            },
+            {
+              "style": "news-card",
+              "title": {
+                "text": "Tesla Faces Production Challenges in Q3",
+                "fontSize": "1.4em",
+                "fontWeight": 600,
+                "marginTop": 0,
+                "color": "var(--text-primary-color)"
+              },
+              "summary": {
+                "text": "Tesla's third-quarter production numbers fell short of targets due to supply chain disruptions...",
+                "fontSize": "1em",
+                "lineHeight": 1.6,
+                "color": "var(--text-secondary-color)"
+              },
+              "footer": {
+                "style": "card-footer",
+                "sentiment": {
+                  "style": "sentiment negative",
+                  "text": "BEARISH"
+                },
+                "source": {
+                  "text": "Bloomberg • 5 hours ago",
+                  "style": "source"
+                }
+              }
+            }
+          ],
+          "bottomNavigation": {
+            "style": "bottom-nav",
+            "items": [
+              {"icon": "home", "text": "Feed", "active": false},
+              {"icon": "bookmark", "text": "Saved", "active": true},
+              {"icon": "trending_up", "text": "Indices", "active": false},
+              {"icon": "person", "text": "Profile", "active": false}
+            ]
+          }
+        }
+      },
+      {
+        "id": 13,
+        "name": "Saved Article Detail",
+        "category": "Feed",
+        "description": "Detailed view of saved article",
+        "elements": {
+          "header": {
+            "style": "app-header",
+            "title": "Saved Article",
+            "backButton": {
+              "icon": "arrow_back",
+              "style": "material-icons"
+            },
+            "removeButton": {
+              "icon": "bookmark_remove",
+              "style": "action-icon"
+            }
+          },
+          "container": {
+            "style": "article-container",
+            "padding": "24px",
+            "paddingBottom": "120px"
+          },
+          "articleContent": {
+            "title": {
+              "text": "Tesla Faces Production Challenges in Q3",
+              "fontSize": "1.8em",
+              "margin": "0 0 12px 0",
+              "fontWeight": 600,
+              "lineHeight": 1.4,
+              "color": "var(--text-primary-color)"
+            },
+            "meta": {
+              "style": "article-meta",
+              "source": {
+                "text": "Bloomberg",
+                "color": "var(--text-secondary-color)"
+              },
+              "time": {
+                "text": "5 hours ago",
+                "color": "var(--text-secondary-color)"
+              },
+              "sentiment": {
+                "style": "sentiment negative",
+                "text": "BEARISH"
+              }
+            },
+            "summary": {
+              "text": "Tesla's third-quarter production numbers fell short of targets due to supply chain disruptions in China. Company produced 430,000 vehicles vs 450,000 expected. Delivery guidance reduced for Q4. Stock down 4.2% in after-hours. Management cites component shortages and logistics challenges as key factors.",
+              "fontSize": "1.05em",
+              "lineHeight": 1.8,
+              "color": "var(--text-primary-color)"
+            }
+          },
+          "actions": {
+            "style": "actions",
+            "shareButton": {
+              "text": "Share Article",
+              "style": "btn-outline",
+              "icon": "share"
+            },
+            "readOriginalButton": {
+              "text": "Read Original",
+              "style": "btn",
+              "type": "primary"
+            }
+          }
+        }
+      },
+      {
+        "id": 14,
+        "name": "My Indices",
+        "category": "Stock Management",
+        "description": "User's selected market indices",
+        "elements": {
+          "header": {
+            "style": "app-header",
+            "title": "My Indices",
+            "actionButton": {
+              "icon": "settings",
+              "style": "action-icon"
+            }
+          },
+          "container": {
+            "style": "list-container",
+            "padding": "16px",
+            "paddingBottom": "100px"
+          },
+          "indicesList": [
+            {
+              "style": "stock-item",
+              "title": "S&P 500",
+              "symbol": "SPX",
+              "subtitle": "Large Cap US Stocks",
+              "price": "4,327.78",
+              "change": "+0.85%",
+              "changeColor": "positive"
+            },
+            {
+              "style": "stock-item",
+              "title": "NASDAQ Composite",
+              "symbol": "IXIC",
+              "subtitle": "Technology Heavy Index",
+              "price": "13,457.23",
+              "change": "+1.23%",
+              "changeColor": "positive"
+            },
+            {
+              "style": "stock-item",
+              "title": "Dow Jones",
+              "symbol": "DJI",
+              "subtitle": "Blue Chip Stocks",
+              "price": "33,962.04",
+              "change": "-0.12%",
+              "changeColor": "negative"
+            }
+          ],
+          "bottomNavigation": {
+            "style": "bottom-nav",
+            "items": [
+              {"icon": "home", "text": "Feed", "active": false},
+              {"icon": "bookmark", "text": "Saved", "active": false},
+              {"icon": "trending_up", "text": "Indices", "active": true},
+              {"icon": "person", "text": "Profile", "active": false}
+            ]
+          }
+        }
+      },
+      {
+        "id": 15,
+        "name": "Manage Indices",
+        "category": "Stock Management",
+        "description": "Add/remove market indices",
+        "elements": {
+          "header": {
+            "style": "app-header",
+            "title": "Manage Indices",
+            "backButton": {
+              "icon": "arrow_back",
+              "style": "material-icons"
+            }
+          },
+          "searchBar": {
+            "style": "search-bar-container",
+            "icon": "search",
+            "placeholder": "Search indices...",
+            "margin": "0 16px 16px 16px"
+          },
+          "container": {
+            "style": "list-container",
+            "padding": "16px",
+            "paddingBottom": "100px"
+          },
+          "availableIndices": [
+            {
+              "style": "selection-item",
+              "checkbox": true,
+              "title": "S&P 500 (SPX)",
+              "subtitle": "Large Cap US Stocks • 500 companies",
+              "checked": true
+            },
+            {
+              "style": "selection-item",
+              "checkbox": true,
+              "title": "NASDAQ Composite (IXIC)",
+              "subtitle": "Technology Heavy Index • 3000+ companies",
+              "checked": true
+            },
+            {
+              "style": "selection-item",
+              "checkbox": true,
+              "title": "Dow Jones (DJI)",
+              "subtitle": "Blue Chip Stocks • 30 companies",
+              "checked": true
+            },
+            {
+              "style": "selection-item",
+              "checkbox": true,
+              "title": "Nifty 50 (NSEI)",
+              "subtitle": "Top 50 Indian Stocks • NSE",
+              "checked": false
+            },
+            {
+              "style": "selection-item",
+              "checkbox": true,
+              "title": "Sensex (BSESN)",
+              "subtitle": "Top 30 Indian Stocks • BSE",
+              "checked": false
+            }
+          ]
+        }
+      },
+      {
+        "id": 16,
+        "name": "My Stocks",
+        "category": "Stock Management",
+        "description": "User's selected stocks portfolio",
+        "elements": {
+          "header": {
+            "style": "app-header",
+            "title": "My Stocks",
+            "actionButton": {
+              "icon": "add",
+              "style": "action-icon"
+            }
+          },
+          "container": {
+            "style": "list-container",
+            "padding": "16px",
+            "paddingBottom": "100px"
+          },
+          "stocksList": [
+            {
+              "style": "stock-item",
+              "info": {
+                "style": "stock-info",
+                "title": "Apple Inc.",
+                "symbol": "AAPL",
+                "subtitle": "Technology"
+              },
+              "price": {
+                "style": "stock-price",
+                "value": "$175.43",
+                "change": "+2.34%",
+                "changeColor": "positive"
+              }
+            },
+            {
+              "style": "stock-item",
+              "info": {
+                "style": "stock-info",
+                "title": "Microsoft Corp.",
+                "symbol": "MSFT",
+                "subtitle": "Technology"
+              },
+              "price": {
+                "style": "stock-price",
+                "value": "$334.89",
+                "change": "+1.23%",
+                "changeColor": "positive"
+              }
+            },
+            {
+              "style": "stock-item",
+              "info": {
+                "style": "stock-info",
+                "title": "Tesla Inc.",
+                "symbol": "TSLA",
+                "subtitle": "Automotive"
+              },
+              "price": {
+                "style": "stock-price",
+                "value": "$248.42",
+                "change": "-3.45%",
+                "changeColor": "negative"
+              }
+            }
+          ],
+          "bottomNavigation": {
+            "style": "bottom-nav",
+            "items": [
+              {"icon": "home", "text": "Feed", "active": false},
+              {"icon": "bookmark", "text": "Saved", "active": false},
+              {"icon": "trending_up", "text": "Stocks", "active": true},
+              {"icon": "person", "text": "Profile", "active": false}
+            ]
+          }
+        }
+      },
+      {
+        "id": 17,
+        "name": "Add More Stocks",
+        "category": "Stock Management",
+        "description": "Search and add stocks to portfolio",
+        "elements": {
+          "header": {
+            "style": "app-header",
+            "title": "Add Stocks",
+            "backButton": {
+              "icon": "arrow_back",
+              "style": "material-icons"
+            }
+          },
+          "searchBar": {
+            "style": "search-bar-container",
+            "icon": "search",
+            "placeholder": "Search stocks...",
+            "margin": "0 16px 16px 16px",
+            "active": true
+          },
+          "container": {
+            "style": "list-container",
+            "padding": "16px",
+            "paddingBottom": "100px"
+          },
+          "stockResults": [
+            {
+              "style": "stock-item",
+              "info": {
+                "style": "stock-info",
+                "title": "Amazon.com Inc.",
+                "symbol": "AMZN",
+                "subtitle": "E-commerce • NASDAQ"
+              },
+              "price": {
+                "style": "stock-price",
+                "value": "$127.74",
+                "change": "+0.89%",
+                "changeColor": "positive"
+              },
+              "addButton": {
+                "style": "btn-add",
+                "icon": "add",
+                "state": "inactive"
+              }
+            },
+            {
+              "style": "stock-item",
+              "info": {
+                "style": "stock-info",
+                "title": "Alphabet Inc.",
+                "symbol": "GOOGL",
+                "subtitle": "Technology • NASDAQ"
+              },
+              "price": {
+                "style": "stock-price",
+                "value": "$138.21",
+                "change": "+1.67%",
+                "changeColor": "positive"
+              },
+              "addButton": {
+                "style": "btn-add",
+                "icon": "add",
+                "state": "inactive"
+              }
+            },
+            {
+              "style": "stock-item",
+              "info": {
+                "style": "stock-info",
+                "title": "NVIDIA Corp.",
+                "symbol": "NVDA",
+                "subtitle": "Technology • NASDAQ"
+              },
+              "price": {
+                "style": "stock-price",
+                "value": "$461.23",
+                "change": "+5.67%",
+                "changeColor": "positive"
+              },
+              "addButton": {
+                "style": "btn-add",
+                "icon": "check",
+                "state": "active"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": 18,
+        "name": "Stock Details",
+        "category": "Stock Management",
+        "description": "Detailed view of individual stock",
+        "elements": {
+          "header": {
+            "style": "app-header",
+            "title": "AAPL",
+            "backButton": {
+              "icon": "arrow_back",
+              "style": "material-icons"
+            },
+            "favoriteButton": {
+              "icon": "favorite_border",
+              "style": "action-icon"
+            }
+          },
+          "container": {
+            "style": "stock-details-container",
+            "padding": "24px",
+            "paddingBottom": "100px"
+          },
+          "priceSection": {
+            "style": "stock-price-large",
+            "textAlign": "center",
+            "marginBottom": "32px",
+            "currentPrice": {
+              "text": "$175.43",
+              "fontSize": "3em",
+              "fontWeight": 600,
+              "margin": 0,
+              "color": "var(--text-primary-color)"
+            },
+            "change": {
+              "text": "+$4.01 (+2.34%) Today",
+              "style": "positive",
+              "fontSize": "1.3em",
+              "fontWeight": 500
+            }
+          },
+          "chartSection": {
+            "style": "chart-placeholder",
+            "height": "220px",
+            "background": "linear-gradient(135deg, rgba(129, 199, 132, 0.1) 0%, rgba(129, 199, 132, 0.05) 100%)",
+            "border": "1px solid rgba(129, 199, 132, 0.2)",
+            "borderRadius": "var(--border-radius)",
+            "display": "flex",
+            "alignItems": "center",
+            "justifyContent": "center",
+            "placeholder": {
+              "text": "📈 Interactive Price Chart",
+              "fontSize": "1.2em",
+              "color": "var(--text-secondary-color)"
+            }
+          },
+          "infoTabs": {
+            "style": "stock-info-tabs",
+            "display": "flex",
+            "justifyContent": "space-around",
+            "marginTop": "32px",
+            "borderBottom": "1px solid var(--divider-color)",
+            "tabs": [
+              {"text": "Overview", "active": true},
+              {"text": "News", "active": false},
+              {"text": "Financials", "active": false}
+            ]
+          },
+          "overviewContent": {
+            "marketCap": {
+              "label": "Market Cap",
+              "value": "$2.78T"
+            },
+            "peRatio": {
+              "label": "P/E Ratio",
+              "value": "28.54"
+            },
+            "dividendYield": {
+              "label": "Dividend Yield",
+              "value": "0.44%"
+            },
+            "dayRange": {
+              "label": "Day Range",
+              "value": "$172.15 - $176.89"
+            },
+            "weekRange52": {
+              "label": "52 Week Range",
+              "value": "$124.17 - $198.23"
+            }
+          }
+        }
+      },
+      {
+        "id": 19,
+        "name": "Profile",
+        "category": "Profile",
+        "description": "User profile and account settings",
+        "elements": {
+          "header": {
+            "style": "app-header",
+            "title": "Profile"
+          },
+          "container": {
+            "style": "profile-container",
+            "padding": "24px",
+            "paddingBottom": "100px"
+          },
+          "profileHeader": {
+            "style": "profile-header",
+            "display": "flex",
+            "flexDirection": "column",
+            "alignItems": "center",
+            "marginBottom": "40px",
+            "avatar": {
+              "style": "avatar",
+              "width": "100px",
+              "height": "100px",
+              "backgroundColor": "var(--primary-color)",
+              "borderRadius": "var(--border-radius)",
+              "display": "flex",
+              "alignItems": "center",
+              "justifyContent": "center",
+              "initial": "JD"
+            },
+            "name": {
+              "text": "John Doe",
+              "fontSize": "1.5em",
+              "fontWeight": 600,
+              "margin": "0 0 6px 0",
+              "color": "var(--text-primary-color)"
+            },
+            "email": {
+              "text": "john.doe@example.com",
+              "color": "var(--text-secondary-color)",
+              "fontSize": "0.9em"
+            }
+          },
+          "menuItems": [
+            {
+              "style": "profile-menu-item",
+              "icon": "edit",
+              "text": "Edit Profile",
+              "arrow": "keyboard_arrow_right"
+            },
+            {
+              "style": "profile-menu-item",
+              "icon": "settings",
+              "text": "Settings",
+              "arrow": "keyboard_arrow_right"
+            },
+            {
+              "style": "profile-menu-item",
+              "icon": "notifications",
+              "text": "Notification Preferences",
+              "arrow": "keyboard_arrow_right"
+            },
+            {
+              "style": "profile-menu-item",
+              "icon": "help",
+              "text": "Help & Support",
+              "arrow": "keyboard_arrow_right"
+            },
+            {
+              "style": "profile-menu-item",
+              "icon": "privacy_tip",
+              "text": "Privacy Policy",
+              "arrow": "keyboard_arrow_right"
+            },
+            {
+              "style": "profile-menu-item",
+              "icon": "description",
+              "text": "Terms of Service",
+              "arrow": "keyboard_arrow_right"
+            },
+            {
+              "style": "profile-menu-item logout",
+              "icon": "logout",
+              "text": "Sign Out",
+              "arrow": "keyboard_arrow_right"
+            }
+          ],
+          "bottomNavigation": {
+            "style": "bottom-nav",
+            "items": [
+              {"icon": "home", "text": "Feed", "active": false},
+              {"icon": "bookmark", "text": "Saved", "active": false},
+              {"icon": "trending_up", "text": "Indices", "active": false},
+              {"icon": "person", "text": "Profile", "active": true}
+            ]
+          }
+        }
+      },
+      {
+        "id": 20,
+        "name": "Edit Profile",
+        "category": "Profile",
+        "description": "Edit user profile information",
+        "elements": {
+          "header": {
+            "style": "app-header",
+            "title": "Edit Profile",
+            "backButton": {
+              "icon": "arrow_back",
+              "style": "material-icons"
+            },
+            "saveButton": {
+              "text": "Save",
+              "style": "text-button"
+            }
+          },
+          "container": {
+            "style": "profile-container",
+            "padding": "24px",
+            "paddingBottom": "100px"
+          },
+          "avatarSection": {
+            "style": "profile-header",
+            "alignItems": "center",
+            "marginBottom": "40px",
+            "avatar": {
+              "style": "avatar",
+              "position": "relative",
+              "initial": "JD"
+            },
+            "changePhotoButton": {
+              "text": "Change Photo",
+              "style": "link",
+              "color": "var(--primary-color)"
+            }
+          },
+          "form": {
+            "firstNameGroup": {
+              "label": "First Name",
+              "input": {
+                "type": "text",
+                "value": "John",
+                "style": "form-group input"
+              }
+            },
+            "lastNameGroup": {
+              "label": "Last Name",
+              "input": {
+                "type": "text",
+                "value": "Doe",
+                "style": "form-group input"
+              }
+            },
+            "emailGroup": {
+              "label": "Email Address",
+              "input": {
+                "type": "email",
+                "value": "john.doe@example.com",
+                "style": "form-group input",
+                "disabled": true
+              },
+              "note": {
+                "text": "Contact support to change email",
+                "fontSize": "0.8em",
+                "color": "var(--text-secondary-color)"
+              }
+            },
+            "phoneGroup": {
+              "label": "Phone Number",
+              "input": {
+                "type": "tel",
+                "value": "+1 (555) 123-4567",
+                "style": "form-group input"
+              }
+            }
+          }
+        }
+      },
+      {
+        "id": 21,
+        "name": "Settings",
+        "category": "Profile",
+        "description": "App settings and preferences",
+        "elements": {
+          "header": {
+            "style": "app-header",
+            "title": "Settings",
+            "backButton": {
+              "icon": "arrow_back",
+              "style": "material-icons"
+            }
+          },
+          "container": {
+            "style": "profile-container",
+            "padding": "24px",
+            "paddingBottom": "100px"
+          },
+          "settingsGroups": [
+            {
+              "title": "General",
+              "items": [
+                {
+                  "style": "profile-menu-item",
+                  "icon": "language",
+                  "text": "Language",
+                  "value": "English",
+                  "arrow": "keyboard_arrow_right"
+                },
+                {
+                  "style": "profile-menu-item",
+                  "icon": "palette",
+                  "text": "Theme",
+                  "value": "Dark",
+                  "arrow": "keyboard_arrow_right"
+                },
+                {
+                  "style": "profile-menu-item",
+                  "icon": "schedule",
+                  "text": "Time Zone",
+                  "value": "EST (UTC-5)",
+                  "arrow": "keyboard_arrow_right"
+                }
+              ]
+            },
+            {
+              "title": "Data & Privacy",
+              "items": [
+                {
+                  "style": "profile-menu-item",
+                  "icon": "cloud_download",
+                  "text": "Download Data",
+                  "arrow": "keyboard_arrow_right"
+                },
+                {
+                  "style": "profile-menu-item",
+                  "icon": "delete",
+                  "text": "Delete Account",
+                  "arrow": "keyboard_arrow_right"
+                }
+              ]
+            },
+            {
+              "title": "About",
+              "items": [
+                {
+                  "style": "profile-menu-item",
+                  "icon": "info",
+                  "text": "App Version",
+                  "value": "1.0.0",
+                  "arrow": "keyboard_arrow_right"
+                },
+                {
+                  "style": "profile-menu-item",
+                  "icon": "rate_review",
+                  "text": "Rate App",
+                  "arrow": "keyboard_arrow_right"
+                },
+                {
+                  "style": "profile-menu-item",
+                  "icon": "share",
+                  "text": "Share App",
+                  "arrow": "keyboard_arrow_right"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": 22,
+        "name": "Notification Preferences",
+        "category": "Profile",
+        "description": "Manage notification settings",
+        "elements": {
+          "header": {
+            "style": "app-header",
+            "title": "Notifications",
+            "backButton": {
+              "icon": "arrow_back",
+              "style": "material-icons"
+            }
+          },
+          "container": {
+            "style": "profile-container",
+            "padding": "24px",
+            "paddingBottom": "100px"
+          },
+          "notificationGroups": [
+            {
+              "title": "Breaking News",
+              "description": "Get notified about major market events",
+              "items": [
+                {
+                  "style": "profile-menu-item",
+                  "icon": "notifications_active",
+                  "text": "Push Notifications",
+                  "toggle": true,
+                  "enabled": true
+                },
+                {
+                  "style": "profile-menu-item",
+                  "icon": "email",
+                  "text": "Email Notifications",
+                  "toggle": true,
+                  "enabled": false
+                }
+              ]
+            },
+            {
+              "title": "Portfolio Updates",
+              "description": "Notifications about your stocks and indices",
+              "items": [
+                {
+                  "style": "profile-menu-item",
+                  "icon": "trending_up",
+                  "text": "Price Alerts",
+                  "toggle": true,
+                  "enabled": true
+                },
+                {
+                  "style": "profile-menu-item",
+                  "icon": "article",
+                  "text": "News for My Stocks",
+                  "toggle": true,
+                  "enabled": true
+                },
+                {
+                  "style": "profile-menu-item",
+                  "icon": "schedule",
+                  "text": "Daily Summary",
+                  "toggle": true,
+                  "enabled": false
+                }
+              ]
+            },
+            {
+              "title": "App Updates",
+              "description": "Stay informed about app features",
+              "items": [
+                {
+                  "style": "profile-menu-item",
+                  "icon": "system_update",
+                  "text": "Feature Announcements",
+                  "toggle": true,
+                  "enabled": true
+                },
+                {
+                  "style": "profile-menu-item",
+                  "icon": "tips_and_updates",
+                  "text": "Tips & Tutorials",
+                  "toggle": true,
+                  "enabled": false
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": 23,
+        "name": "Help & Support",
+        "category": "Profile",
+        "description": "Help resources and support options",
+        "elements": {
+          "header": {
+            "style": "app-header",
+            "title": "Help & Support",
+            "backButton": {
+              "icon": "arrow_back",
+              "style": "material-icons"
+            }
+          },
+          "container": {
+            "style": "profile-container",
+            "padding": "24px",
+            "paddingBottom": "100px"
+          },
+          "helpSections": [
+            {
+              "title": "Get Help",
+              "items": [
+                {
+                  "style": "profile-menu-item",
+                  "icon": "chat",
+                  "text": "Live Chat",
+                  "subtitle": "Chat with our support team",
+                  "arrow": "keyboard_arrow_right"
+                },
+                {
+                  "style": "profile-menu-item",
+                  "icon": "mail",
+                  "text": "Email Support",
+                  "subtitle": "Send us an email",
+                  "arrow": "keyboard_arrow_right"
+                },
+                {
+                  "style": "profile-menu-item",
+                  "icon": "phone",
+                  "text": "Call Support",
+                  "subtitle": "+1 (800) 123-4567",
+                  "arrow": "keyboard_arrow_right"
+                }
+              ]
+            },
+            {
+              "title": "Resources",
+              "items": [
+                {
+                  "style": "profile-menu-item",
+                  "icon": "help",
+                  "text": "FAQ",
+                  "subtitle": "Common questions and answers",
+                  "arrow": "keyboard_arrow_right"
+                },
+                {
+                  "style": "profile-menu-item",
+                  "icon": "school",
+                  "text": "User Guide",
+                  "subtitle": "Learn how to use StockBrief",
+                  "arrow": "keyboard_arrow_right"
+                },
+                {
+                  "style": "profile-menu-item",
+                  "icon": "play_circle",
+                  "text": "Video Tutorials",
+                  "subtitle": "Watch helpful videos",
+                  "arrow": "keyboard_arrow_right"
+                }
+              ]
+            },
+            {
+              "title": "Community",
+              "items": [
+                {
+                  "style": "profile-menu-item",
+                  "icon": "forum",
+                  "text": "Community Forum",
+                  "subtitle": "Join the discussion",
+                  "arrow": "keyboard_arrow_right"
+                },
+                {
+                  "style": "profile-menu-item",
+                  "icon": "feedback",
+                  "text": "Send Feedback",
+                  "subtitle": "Help us improve",
+                  "arrow": "keyboard_arrow_right"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": 24,
+        "name": "Live Chat",
+        "category": "Profile",
+        "description": "Customer support chat interface",
+        "elements": {
+          "header": {
+            "style": "app-header",
+            "title": "Live Chat",
+            "backButton": {
+              "icon": "arrow_back",
+              "style": "material-icons"
+            },
+            "statusIndicator": {
+              "text": "● Online",
+              "color": "var(--success-color)",
+              "fontSize": "0.8em"
+            }
+          },
+          "chatContainer": {
+            "style": "chat-container",
+            "padding": "16px",
+            "paddingBottom": "80px",
+            "height": "calc(100% - 120px)",
+            "overflowY": "auto"
+          },
+          "messages": [
+            {
+              "type": "system",
+              "text": "You are connected to our support team. How can we help you today?",
+              "timestamp": "2:34 PM",
+              "style": "system-message"
+            },
+            {
+              "type": "user",
+              "text": "I'm having trouble adding stocks to my portfolio",
+              "timestamp": "2:35 PM",
+              "style": "user-message"
+            },
+            {
+              "type": "agent",
+              "text": "I'd be happy to help you with that! Can you tell me what happens when you try to add stocks?",
+              "timestamp": "2:36 PM",
+              "agentName": "Sarah",
+              "style": "agent-message"
+            }
+          ],
+          "chatInput": {
+            "style": "chat-input-container",
+            "position": "fixed",
+            "bottom": "0",
+            "left": "0",
+            "right": "0",
+            "backgroundColor": "var(--surface-color)",
+            "padding": "16px",
+            "borderTop": "1px solid var(--divider-color)",
+            "input": {
+              "placeholder": "Type your message...",
+              "style": "chat-input"
+            },
+            "sendButton": {
+              "icon": "send",
+              "style": "send-button"
+            }
+          }
+        }
+      },
+      {
+        "id": 25,
+        "name": "No Internet",
+        "category": "Utility",
+        "description": "Offline state notification",
+        "elements": {
+          "container": {
+            "style": "utility-screen",
+            "display": "flex",
+            "flexDirection": "column",
+            "justifyContent": "center",
+            "alignItems": "center",
+            "height": "100%",
+            "padding": "40px"
+          },
+          "icon": {
+            "name": "wifi_off",
+            "fontSize": "5em",
+            "color": "var(--text-secondary-color)",
+            "marginBottom": "32px"
+          },
+          "title": {
+            "text": "No Internet Connection",
+            "fontSize": "1.6em",
+            "fontWeight": 600,
+            "textAlign": "center",
+            "color": "var(--text-primary-color)",
+            "marginBottom": "16px"
+          },
+          "message": {
+            "text": "Please check your internet connection and try again. You can still read saved articles while offline.",
+            "color": "var(--text-secondary-color)",
+            "lineHeight": 1.7,
+            "textAlign": "center"
+          },
+          "retryButton": {
+            "text": "Try Again",
+            "style": "btn",
+            "type": "primary",
+            "marginTop": "32px"
+          }
+        }
+      },
+      {
+        "id": 26,
+        "name": "Maintenance",
+        "category": "Utility",
+        "description": "Server maintenance notification",
+        "elements": {
+          "container": {
+            "style": "utility-screen",
+            "display": "flex",
+            "flexDirection": "column",
+            "justifyContent": "center",
+            "alignItems": "center",
+            "height": "100%",
+            "padding": "40px"
+          },
+          "icon": {
+            "name": "build",
+            "fontSize": "5em",
+            "color": "var(--text-secondary-color)",
+            "marginBottom": "32px"
+          },
+          "title": {
+            "text": "Under Maintenance",
+            "fontSize": "1.6em",
+            "fontWeight": 600,
+            "textAlign": "center",
+            "color": "var(--text-primary-color)",
+            "marginBottom": "16px"
+          },
+          "message": {
+            "text": "We're currently performing scheduled maintenance to improve your experience. Please check back in a few minutes.",
+            "color": "var(--text-secondary-color)",
+            "lineHeight": 1.7,
+            "textAlign": "center"
+          },
+          "estimatedTime": {
+            "text": "Estimated completion: 2:30 PM EST",
+            "color": "var(--primary-color)",
+            "fontSize": "0.9em",
+            "marginTop": "16px",
+            "textAlign": "center"
+          }
+        }
+      },
+      {
+        "id": 27,
+        "name": "App Update Required",
+        "category": "Utility",
+        "description": "App update prompt",
+        "elements": {
+          "container": {
+            "style": "utility-screen",
+            "display": "flex",
+            "flexDirection": "column",
+            "justifyContent": "center",
+            "alignItems": "center",
+            "height": "100%",
+            "padding": "40px"
+          },
+          "icon": {
+            "name": "system_update",
+            "fontSize": "5em",
+            "color": "var(--primary-color)",
+            "marginBottom": "32px"
+          },
+          "title": {
+            "text": "Update Required",
+            "fontSize": "1.6em",
+            "fontWeight": 600,
+            "textAlign": "center",
+            "color": "var(--text-primary-color)",
+            "marginBottom": "16px"
+          },
+          "message": {
+            "text": "A new version of StockBrief is available with important improvements and bug fixes.",
+            "color": "var(--text-secondary-color)",
+            "lineHeight": 1.7,
+            "textAlign": "center"
+          },
+          "updateButton": {
+            "text": "Update Now",
+            "style": "btn",
+            "type": "primary",
+            "marginTop": "32px"
+          },
+          "laterButton": {
+            "text": "Later",
+            "style": "link",
+            "color": "var(--text-secondary-color)",
+            "marginTop": "16px"
+          }
+        }
+      }
+    ]
+  }
+}
